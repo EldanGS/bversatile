@@ -92,3 +92,66 @@ int main() {  frp
 
     return 0;
 }
+
+// 1.1 recursion + memoizetion
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define frp freopen("input.txt", "r", stdin);             freopen("output.txt", "w", stdout); 
+ 
+const int INF = (int)1e9;
+ 
+unordered_map <int, int> memoize;
+ 
+inline int calc(int n, vector <int>& coins, int total) {
+    if (total == 0) {
+        return 0;
+    }
+ 
+    if (memoize.count(total)) {
+        return memoize[total];
+    }
+ 
+    int minValue = INF;
+    for (int i = 0; i < n; i++) {
+        if (coins[i] > total) {
+            continue;
+        }
+ 
+        int value = calc(n, coins, total - coins[i]);
+ 
+        if (minValue > value) {
+            minValue = value;
+        }
+    }
+ 
+    minValue = (minValue == INF ? minValue : minValue + 1);
+    memoize[total] = minValue;
+ 
+    return minValue;
+}
+ 
+int main() {  frp
+    int n;
+    cin >> n;
+ 
+    vector <int> coins(n);
+    for (int i = 0; i < n; i++) {
+        cin >> coins[i];
+    }
+ 
+    int total;
+    cin >> total;
+ 
+    int result = calc(n, coins, total);
+ 
+    if (result >= INF) {
+        cout << -1;
+    } else {
+        cout << result;
+    }
+ 
+    return 0;
+}
