@@ -29,8 +29,8 @@ int main() {  frp
     */
 
     int n = (int)array.size();
+            
     vector <int> lis(n, 1);
-
     for (int i = 1; i < n; i++) {
         for (int j = 0; j < i; j++) {
             if (array[i] > array[j] and lis[i] < lis[j] + 1) {
