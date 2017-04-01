@@ -11,7 +11,7 @@ int leftIndex;
 int rightIndex;
 
 int Find_max_crossing_subarray(vector <int> a, int low = 0, int mid = 0, int high = 0) {
-    int leftSum = 0;
+    int leftSum = a[low];
     for (int i = mid; i >= 0; i--) {
         static int curSum = 0;
         curSum += a[i];
@@ -22,7 +22,7 @@ int Find_max_crossing_subarray(vector <int> a, int low = 0, int mid = 0, int hig
         }
     }
 
-    int rightSum = 0;
+    int rightSum = a[high];
     for (int i = mid + 1; i <= high; i++) {
         static int curSum = 0;
         curSum += a[i];
@@ -56,7 +56,7 @@ int Find_max_subarray(vector <int> a, int low, int high) {
     }
 }
 
-int main() { //frp
+int main() { frp
     int n;
     cin >> n;
 
@@ -66,6 +66,8 @@ int main() { //frp
     }
 
     cout << Find_max_subarray(a, 1, n);
+
+
     
     return 0;
 }
