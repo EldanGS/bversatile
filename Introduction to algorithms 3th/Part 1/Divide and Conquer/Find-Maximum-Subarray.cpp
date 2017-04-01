@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <bits/stdc++.h>
+#include <limits.h>
+// #include <bits/stdc++.h>
 
 using namespace std;
 
@@ -7,67 +8,55 @@ using namespace std;
 #define frp freopen("input.txt", "r", stdin); \
             freopen("output.txt", "w", stdout); 
 
-int leftIndex;
-int rightIndex;
+int max(int a, int b) { return (a > b)? a : b; }
 
-int Find_max_crossing_subarray(vector <int> a, int low = 0, int mid = 0, int high = 0) {
-    int leftSum = a[low];
+int max(int a, int b, int c) { return max(max(a, b), c); }
+
+int maxCrossingSum(int a[], int low, int mid, int high) {
+    int leftSum = INT_MIN;
+    int curSum = 0;
     for (int i = mid; i >= 0; i--) {
-        static int curSum = 0;
         curSum += a[i];
 
         if (leftSum < curSum) {
             leftSum = curSum;
-            leftIndex = i;
         }
     }
 
-    int rightSum = a[high];
+    int rightSum = INT_MIN;
+    curSum = 0;
     for (int i = mid + 1; i <= high; i++) {
-        static int curSum = 0;
         curSum += a[i];
 
         if (rightSum < curSum) {
             rightSum = curSum;
-            rightIndex = i;
         }
     }
 
     return (leftSum + rightSum);
 }
 
-int Find_max_subarray(vector <int> a, int low, int high) {
+int maxSumSubarray(int a[], int low, int high) {
     if (low == high) {
         return (a[low]);
-    } else {
-        int mid = (low + high) / 2;
+    } 
+   
+    int mid = (low + high) / 2;
 
-        int leftSum = Find_max_crossing_subarray(a, low, mid);
-        int rightSum = Find_max_crossing_subarray(a, mid + 1, high);
-        int crossSum = Find_max_crossing_subarray(a, low, mid, high);
-
-        if (leftSum >= rightSum and leftSum >= crossSum) {
-            return leftSum;
-        } else if (rightSum >= leftSum and rightSum >= crossSum) {
-            return rightSum;
-        } else {
-            return crossSum;
-        }
-    }
+    return max(maxSumSubarray(a, low, mid), maxSumSubarray(a, mid + 1, high), maxCrossingSum(a, low, mid, high));
 }
 
-int main() { frp
+int main() { // frp
     int n;
-    cin >> n;
+    scanf("%d", &n);
 
-    vector <int> a(n + 1);
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i];
+    int* a = new int [n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
 
-    cout << Find_max_subarray(a, 1, n);
-
-
+    int result = maxSumSubarray(a, 0, n - 1);
+    printf("%d\n", result);
     
     return 0;
 }
