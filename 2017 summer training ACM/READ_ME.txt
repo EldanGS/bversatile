@@ -4,7 +4,7 @@ In this page: "2017 summer training ACM", I'll consider some problems from sites
 Maybe in the first time, I solve the problems in "russian" language. To get some basic experience and knowledge in ACM, but I'll try to translate in english and proof that.
 Ok guys, I'll start and for you I could be say: have a nice programming.
 
-My acc,
+My accoutns,
 codeforces: http://codeforces.com/profile/ELDAN
 hacker: https://www.hackerrank.com/Eldvn
 spoj.com: @eldan
