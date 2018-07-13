@@ -12,4 +12,4 @@ Implementations of different [algorithms wiki](https://en.wikipedia.org/wiki/Alg
   - [Math](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/math)
   - [String](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
   - [Tree](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
-  
+  - [Dynamic](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
