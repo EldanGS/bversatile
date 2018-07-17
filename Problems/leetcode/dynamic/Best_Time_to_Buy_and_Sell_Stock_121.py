@@ -1,6 +1,11 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
-# O(N) by time, O(1) by space
+"""
+Solution.
+Complexity analysis:
+Time: O(N)
+Memory: O(1) - always
+"""
 class Solution:
     def maxProfit(self, prices):
         """
