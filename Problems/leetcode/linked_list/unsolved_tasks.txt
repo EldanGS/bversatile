@@ -2,7 +2,6 @@ https://leetcode.com/problems/linked-list-cycle/description/
 https://leetcode.com/problems/remove-linked-list-elements/description/
 https://leetcode.com/problems/palindrome-linked-list/description/
 https://leetcode.com/problems/intersection-of-two-linked-lists/description/
-https://leetcode.com/problems/design-linked-list/description/
 
 
 need resolve:
