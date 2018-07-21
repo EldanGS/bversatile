@@ -14,3 +14,4 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [String](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
   - [Tree](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
   - [Dynamic](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
+  - [Linked list](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
