@@ -5,7 +5,7 @@ My implementations of different algorithms, solutions to various algorithmic, ma
 Implementations of different [algorithms](https://github.com/EldanGS/bversatile/tree/master/Algorithms).
   - [dynamic programming](https://github.com/EldanGS/bversatile/tree/master/Algorithms/dynamic%20programming)
   - [divide and conquer](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Divide%20and%20Conquer)
-  - [graph algos](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
+  - [graph](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
   
 ## Problems solutions
 - [leetcode](http://leetcode.com/)
@@ -14,4 +14,4 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [String](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
   - [Tree](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
   - [Dynamic](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
-  - [Linked list](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
+  - [Linked List](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
