@@ -15,3 +15,5 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [Tree](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
   - [Dynamic](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
   - [Linked List](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
+- [hackerrank](http://hackerrank.com)
+  - [Array](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/array)
