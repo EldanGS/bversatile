@@ -8,12 +8,18 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [graph](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
   
 ## Problems solutions
-- [leetcode](http://leetcode.com/)
-  - [Array](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/array)
-  - [Math](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/math)
-  - [String](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
-  - [Tree](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
-  - [Dynamic](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
-  - [Linked List](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
-- [hackerrank](http://hackerrank.com)
-  - [Array](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/array)
+- Array
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/array)
+  - [hackerrank](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/array)
+- Math
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/math)
+- String
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
+- Tree
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
+- Dynamic Programming
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
+- Linked List
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
+- Binary Search
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/binary_search)
