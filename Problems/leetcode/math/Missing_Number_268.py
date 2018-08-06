@@ -1,5 +1,13 @@
 # https://leetcode.com/problems/missing-number/
 
+
+"""
+Solution.
+Complexity analysis:
+Time: O(N) - always
+Memory: O(1) - in worst case
+"""
+
 class Solution:
     def missingNumber(self, nums):
         """
