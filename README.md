@@ -23,3 +23,7 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
 - Binary Search
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/binary_search)
+- Bits Manipulation
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/bits)
+- Back Tracking
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/back_tracking)
