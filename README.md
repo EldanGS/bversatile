@@ -27,3 +27,9 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/bits)
 - Back Tracking
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/back_tracking)
+
+## Data Science interview preparation
+- SQL
+  - [hackerrank](https://github.com/EldanGS/bversatile/tree/master/SQL/hackerrank)
+- Math
+  - [hackerrank 10 day statistics](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/10_Days_of_Statistics)
