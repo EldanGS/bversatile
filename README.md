@@ -6,6 +6,7 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [dynamic programming](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Dynamic_programming)
   - [divide and conquer](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Divide_and_conquer)
   - [graph](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
+  - [string](https://github.com/EldanGS/bversatile/tree/master/Algorithms/String)
 ## Problems solutions
 - Array
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/array)
