@@ -3,10 +3,9 @@ My implementations of different algorithms, solutions to various algorithmic, ma
 
 ## Algorithms
 Implementations of different [algorithms](https://github.com/EldanGS/bversatile/tree/master/Algorithms).
-  - [dynamic programming](https://github.com/EldanGS/bversatile/tree/master/Algorithms/dynamic%20programming)
-  - [divide and conquer](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Divide%20and%20Conquer)
+  - [dynamic programming](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Dynamic_programming)
+  - [divide and conquer](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Divide_and_conquer)
   - [graph](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
-  
 ## Problems solutions
 - Array
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/array)
