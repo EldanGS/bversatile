@@ -1,20 +1,18 @@
 # https://www.hackerrank.com/challenges/s10-binomial-distribution-1/problem
 
+def factorial(n):
+    fact = 1
+    for val in range(2, n + 1):
+        fact *= val
+    return fact
 
-def fact(n):
-    result = 1
-    for i in range(2, n):
-        result *= i
-    
-    return result
+def Cnk(n, k):
+    return factorial(n) / (factorial(n - k) * factorial(k))
 
-def cnk(n, x):
-    return fact(n) / (fact(x) * fact(n - x))
+def binom(x, n, p):
+    return Cnk(n, x) * p**x * (1 - p)**(n - x)
 
-def b(x, n, p):
-    return cnk(n, x) * p**x * (1-p)**(n-x)
-
-l, r = list(map(float, input().split(" ")))
+l, r = list(map(float, input().split(' ')))
 odds = l / r
 
-print(round(sum([b(i, 6, odds / (1 + odds)) for i in range(3, 7)]), 3))
+print(round(sum([binom(i, 6, odds / (1 + odds)) for i in range(3, 7)]), 3))
