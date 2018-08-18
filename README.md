@@ -33,3 +33,7 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [hackerrank](https://github.com/EldanGS/bversatile/tree/master/SQL/hackerrank)
 - Math
   - [hackerrank 10 day statistics](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/10_Days_of_Statistics)
+  
+## Software Engineering interview preparation
+- Cracking the Coding Interview 6th Edition
+  - [C++ Solutions](https://github.com/EldanGS/bversatile/tree/master/Problems/CtCI-6th-Edition)
