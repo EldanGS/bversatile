@@ -14,6 +14,12 @@ using namespace std;
 
 #define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
+/*
+Solution.
+Complexity analysis:
+Time: O(N) - always
+Memory: O(1) - in worst case
+*/
 ListNode * Partition(ListNode * head, int x) {
     ListNode node1(0), node2(0);
     ListNode *ptr1 = &node1, *ptr2 = &node2;
