@@ -14,6 +14,7 @@ TreeNode *commonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (!root or root == p or root == q) {
         return root;
     }
+    
     TreeNode *left = commonAncestor(root -> left, p, q);
     TreeNode *right = commonAncestor(root -> right, p, q);
 
