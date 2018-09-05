@@ -4,45 +4,23 @@ using namespace std;
 
 #define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-string to_bit(int x) {
-    string res = "";
-    while (x) {
-        if (x & 1) {
-            res += '1';
-        } else {
-            res += '0';
-        }
-        x >>= 1;
-    }
+int Insertion(int n, int m, int i, int j) { // 1000000
+    // 31 lengths of bits ones, ones = 11111111
+    int ones = ~0;
 
-    return res;
-}
+    // left = 11100000
+    int left = ones << (j + 1);
 
-int get_int(string &str) {
-    int res = 0;
-    for (int i = (int)str.size() - 1; i >= 0; i++) {
-        if (str[i] - '0') {
-            res <<= 1;
-        }
-    }
+    // right = 00000011
+    int right = (1 << i) - 1;
 
-    return res;
-}
+    // mask is range of j to i, mask = 11100011
+    int mask = left | right;
 
-string Insertion(int N, int M, int i, int j) {
-    string N_str = to_bit(N);
-    string M_str = to_bit(M);
+    int nCleared = n & mask;
+    int mShifted = m << i;
 
-    int ind = (int)M_str.size() - 1;
-    while (j > 0 and ind > 0) {
-        N_str[j] = ((N_str[j] - '0') | (M_str[ind] - '0')) + '0';
-        ind--;
-        j--;
-    }
-
-    reverse(N_str.begin(), N_str.end());
-    
-    return N_str;
+    return nCleared | mShifted;
 }
 
 int main() { boost;
