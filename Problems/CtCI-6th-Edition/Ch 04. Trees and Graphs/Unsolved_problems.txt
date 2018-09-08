@@ -1,2 +1,0 @@
-1) 4.9 BST Suqeunce
-2) 4.10 Check Subtre (resolved)

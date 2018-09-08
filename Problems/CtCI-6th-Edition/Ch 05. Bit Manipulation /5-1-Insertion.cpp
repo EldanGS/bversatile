@@ -4,7 +4,7 @@ using namespace std;
 
 #define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-int Insertion(int n, int m, int i, int j) { // 1000000
+int Insertion(int n, int m, int i, int j) { 
     // 31 lengths of bits ones, ones = 11111111
     int ones = ~0;
 

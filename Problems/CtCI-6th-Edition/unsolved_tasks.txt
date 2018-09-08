@@ -1,0 +1,7 @@
+Cracking the Coding Interview 6th edition.
+Problems Solution by Eldan Abdrashim. 
+
+1) Chapter 3
+2) 4.9 BST Suqeunce
+3) 4.10 Check Subtre (resolved)
+4) 5.8 Draw Line
