@@ -1,5 +1,4 @@
-Pre-Interview
-(Ten minutes)
+Pre-Interview Questions:
 
 1) Q: Mental Math: One million minus one hundred eleven.
 A: 1000000 - 111 = 999889, trying solving quickly in mind
@@ -33,8 +32,54 @@ A: It's easy to show that the optimal strategy must take the form "if current va
 Q: c) Same thing as above, except you have an option to play the game a third time.
 A: this is the same thing as part b). I'm pretty sure that there's a nice way to do this if you have the option to play the game a total of n times via recursion.
 
-Interview
-(Thirty minutes)
+
+7) Q: 37 squared ?
+A: find closest tens number, which is 40; distance of 40 is 3
+34 * 40 = 1360 + 3^2 = 1369
+
+
+8) Q: 4% of 97?
+A: find 10% of 97 = 9.7;
+find 5% of 97 is 9.7 / 2 = 4.85
+find 1% of 97 is 97 / 100 = 0.97
+Totally, 4.85 - 0.97 = 3.88 is 4% of 97
+
+
+9) Q: 1 million minus 111?
+A: 999000 + 1000 - 100 - 10 - 1 = 999000 + 889 = 999889
+
+
+10) Q: 5% of 98?
+A: 10% of 98 = 9.8
+5% is 9.8 / 2 = 4.9
+
+
+11) Q: 42 squared?
+A: find closest tens number 40; distance is 42-40 = 2
+40 * 44 = 40 * 40 + 40 * 4 = 1600 + 160
+42 ^ 2 = 1760 + 2^2 = 1764 
+
+
+12) Q: 3% of 47?
+A: find 5% of 47, which is 2.35
+find 1% of 47, which is 0.47. multiply 1% * 2 = 0.94
+5% - 2% = 2.35 - 0.94 = 1.41
+
+
+13) Q: 58 squared ?
+A: find closest tens number 60, distance 60-58 = 2
+56 * 60 = (56 * 5 + 56) * 10 = 3360 + 2^2 = 3364
+
+
+14) Q: Subtract 12 from 1 million  
+A: 999900 + 100 - 10 - 2 = 88 = 999988
+
+15) Q: Estimate the weight of Mt. Kilimanjaro.  
+A: There is a lot answer you will say, the main reason some kind of question, to looking how you are analysis. The important thing is to find something that makes sense to you, after all it is you and your idead that are being interviewed.
+
+
+
+Interview Questions:
 
 1) Q: Suppose you are given the opportunity to bid for a treasure chest, which you know with 100% confidence to be priced anywhere between $0-$1000. If you bid equal to or above the price, you win the treasure chest (at the cost of your bid). If you bid below the price, you do not earn the treasure chest. Now, also suppose you have a friend who is willing to buy the treasure chest from you for one and a half times the price of the treasure chest (should you obtain the chest). What should your bid be?
 A: I'm assuming that the probability distribution of the treasure chest is uniform; this makes sense if we assume no prior knowledge on the treasure chest. Suppose our bid is B and the price of the chest is C; note that B is a fixed value while C is a random variable. We have that P(C < B) = B/1000 and P(C >= B) = 1 - B/1000. In the latter case, our net gain is 0. In the former case, our net gain is 1.5C - B. Our expected net gain is thus E[B/1000 * (1.5C - B)] = B/1000 * (1.5*500-B) = B*(750-B)/1000. This is maximized when B = 375, so this is the right bid.
@@ -64,7 +109,7 @@ A: This problem is identical to problem 1. Answer is 0.375
 
 
 7) Q: On a sheet of paper, you have 100 statements written down. the first says, "at most 0 of these 100 statements are true." the second says, "at most 1 of these 100 statements are true." ... the nth says, "at most (n-1) of these 100 statements are true. ... the 100th says, "at most 99 of these statements are true." how many of the statements are true?
-A:
+A: More generally, suppose that we have n statements, and let statement k read "at most k of these n statements are true" for k = 0, 1, 2, ..., n - 1. Note that if statement k is true, then so are statements k + 1, k + 2, ..., n - 1. But, if statement k is true, then there must be at most k true statements while n - k statements are true. We have that n - k <= k, so k >= n / 2. In our case, n = 100, so k >= 50 (round up). If k = 50 (statements 50 - 99 are true), then everything checks out. If k = 51 (statements 49 - 99 are true), this doesn't work out, so exactly 50 statements are true.
 
 
 8) Q: You have two decks of cards: one has 13 reds and 13 blacks, and the other has 26 reds and 26 blacks. We play a game in which you select one of the two decks, and pick two cards from it; you win the game if you select two black cards. Which deck should you select to maximize your chances of winning? Try to do this problem in your head, without writing any calculations down.
@@ -74,3 +119,119 @@ If this is hard to see, imagine if you had 1000 reds and 1000 blacks. P(black th
 
 9) Q: You have a deck of 52 cards, and you keep taking pairs of cards out of the deck. if a pair of cards are both red, then you win that pair; if a pair of cards are both black, then I win that pair; if a pair of cards has one red and one black, then it's discarded. If, after going through the whole deck, you have more pairs than I do, then you win $1, and if I have more pairs than you do, I win $1. What is the value of this game in the long run?
 A: Seems to be 0 to me by symmetry; If first player win, then increase chance for second player to win and so on.
+
+
+10) Q: with a 100 sided dice you roll once and then have the option (second chance) to roll again if you want to try and increase your number. what is you rstrategy i.e. what numbers would you roll again for and what numbers would you simply take. I think the probability distribution between the 100 numbers is assumed equal
+A: Probability Expected Value Calculation 
+50% 51 to 100(75.50) 50%*75.50 
+50% Retry 1 to 100(50.50) 50%*50.50 
+Sum = 0.5 * (75.50 + 50.50) = 63
+
+
+11) Q:  give a 95% confidence  interval of the number of riders that have taken Tokyo's metro since its construction!! if someone takes the metro two time a days he would count 2*number of day * .... No paper, no pen and not internet allowed
+A: 
+
+
+12) Q: Poker. 26 red, 26 black. Take one every time, you can choose to guess whether it’s red. You have only one chance. If you are right, you get 1 dollar. What’s the strategy? And what’s the expected earn?
+A: There is symmetry between red and black. Each time you pull a card it is equally likely to be red or black (assuming you haven't looked at the previous cards you pulled). Thus no matter when you guess you odds are 50% and the expected return should be 50 cents. P(x = red) = 26 / 52 = 1/2
+
+
+13) Q: toss two dice. if the sum is 7, you win a dollar. if the  sum is even, you lose a dollar. otherwise, roll again. what is the expected payoff?
+A: P(sum is 7) = 6 / 36; [(1, 6), (2, 5), (3, 4), (6, 1), (5, 2), (4, 3)] 
+P(x is even) = 18 / 36; 
+P(payoff) = P(x is even) - P(sum is 7) = 18/36 - 6/36 = 12/36
+To sum up, 
+E = (6 / 36) * 1 - (18 / 36) * 1 + (12 / 36) * E
+E = -0.5$
+
+
+14) Q: Last digit of 17^17
+A: The last digit of a exponent can be calculated by the relatively simple method of "Cyclicity Of Numbers".
+7 ^ 1 = 7
+7 ^ 2 = 49 => 7 * 7 = 49
+7 ^ 3 = 343 => 9 * 7 = 63
+7 ^ 4 = 2401 => 3 * 7 = 21
+7 ^ 5 = 16807 <- cycle => 1 * 7 = 7
+7 => [7, 9, 3, 1]
+17 ^ (17 % 4) = 7
+
+Example:
+12^12 ?
+2 * 1 = 2 (1)
+2 * 2 = 4 (2)
+2 * 4 = 8  (3)
+2 * 8 = 16 (4)
+2 * 6 = 12 <= cycle
+12 ^ (12 % 4) = 12^0 = 4 last digit
+
+18^18 ?
+8 * 1 = 8 (1)
+8 * 8 = 64 (2)
+8 * 4 = 32 (3)
+8 * 2 = 16 (4)
+8 * 6 = 48 <= cycle again
+18^(18 % 4) = 18^2 = 4 <= last digit
+
+
+15) Q: A lot of expected value questions and how much would you be  willing to pay for this game. Someone about two games being fair/ equivalent?
+A: Answer for those kind of question, will be need accurately and quickly thinking about expectation.
+
+
+16) Q: I'm thinking of an integer with no 0s or 1s. When you multiply all the digits of the number together, you get 10,000. What is the largest number I could be thinking of? The smallest such number?  
+A: 10,000 = 2^4 * 5^4 = 55552222 largest
+10,000 = 2^4 * 5^4 = 555528 smallest
+
+17) Q: You have an apple truck that can hold up to 1000 apples and needs to help you transport 3000 apples from your farm to the market 1000 miles away. Unfortunately, your truck has a hole in it that causes your truck to (irrecoverably) drop 1 apple per mile. (Assume the apples explode if you drop them.) Fortunately, you are allowed to drop off apples in a secure, clean box at any point along the side of the road to pick them up later (but still you can only hold a maximum of 1000 apples at a time). How should you execute your trips such that you can transport the maximum number of apples to market?
+
+A: You're looking to minimize number of miles traveled while carrying apples. Say you put the first secure clean box at point x (x miles after the starting point). You'll be making 3 trips to that point, since you have 3000 apples.
+
+If at the end of the 3 trips, you have over 2000 apples, you'll have to make another 3 trips from that point, which is sub optimal. The obvious thing to do is then to place the box such that after 3 trips you have exactly 2000 apples left. The solution is to put the box at mile 333, and you'll have 2001 apples in the box at the end.
+
+Repeat the process except aim for 1000 apples left in the next box. Making 2 trips of 1000 each (we're leaving 1 apple there to rot), you'll be putting the box at mile 833, and we'll lose 500 apples per trip, and end with at box of 1000 apples.
+
+For the remaining 167 miles, just bring your 1000 apples along, and you'll lose 167 of them, so the answer is 833.
+
+If you think it's wasteful to leave 1 apple behind, then you can make your stops at 334, have 1998 apples left, but the next step is still stopping at mile 833, in which you'll have 1000 apples left again. (so this would yield the same result as before)
+
+
+18) Q: Expected value of number of heads if you flip 4 coins and  can flip over any pair of two tails.
+A: There are 16 different ways you can flip four coins. 
+1/16 of them are HHHH or TTTT
+4/16 are 1T, 3H or 1H, 3T
+6/16 are 2H, 2T or 2T, 2H
+
+Without the flipping E = 2 due to (symmetry) binomial distribution. With the fillip you add an additional
+4x1/16 + 2x(4 + 6)/16 = 1.5, so answer is 3.5
+
+2nd variant:
+3.375. There are 16 different ways you can flip four coins. 1/16 of them are HHHH and TTTT, 4/16 are one T and three H, 4/16 are one H and three T, and 6/16 are two H and two T. If we can flip two or four tails at any point then all the cases with 2 T and 2 H become 4 H and the cases with 3T and 1 H become 3 H and one T and the cases with 4 T become 2 T and 2 H. So we expect 7/16 (4) + 8/16(3)and 1/16(2)=3.375.
+
+
+19) Q: a flip a coin 4 times and get a dollar for each heads. What is the expected value of the game if I am allowed infinite tries.
+A: P(x is head) = 1 / 2
+Let X be the number of flips we make before seeing heads. Let p be the probability of getting tails on any one flip. And note three things that, individually, aren't too hard to see:
+
+Coin flipping is a memoryless process.
+We must flip the coin at least once in order to get heads (or tails, or anything).
+The probability of not getting heads on that first flip is p.
+Using these three ideas, we can model E[X], the expected number of flips we perform before seeing heads, as:
+
+E[X] = 1 + pE[X].
+
+That is, we flip the coin once (hence the 1), and there is a p chance that we get tails and have to continue flipping the coin (hence the + pE[X]). Because coin flipping is memoryless, the expected value of X after flipping a tails is the same as before flipping that tails.
+
+Now it turns out that modeling E[X] in this way is useful because we can easily solve for E[X] and answer our question:
+
+E[X] = 1 + pE[X]
+=> E[X] - pE[X] = 1
+=> (1 - p)E[X] = 1
+=> E[X] = 1 / (1 - p)
+
+Since p = 1/2, we get E[X] = 2.
+
+
+20) Q: 100^2-99^2....-1^2
+A: sum(100 to 1) = n * (n + 1) / 2 = 100 * 101 / 2 = 5050
+Yes, this is most definitely the sum of 100 to 1. The best way to see this w/o paper and a calculator is to consider that 100^2 - 99^2 is really (100 + 99) (100 - 99) = 199 and 2^2 - 1^2 is really (2 + 1)(2-1) = 3. The lower squares mirror their higher counterparts such that you get 25 pairs that equal 202. 202*25 = 5050.
+
+
