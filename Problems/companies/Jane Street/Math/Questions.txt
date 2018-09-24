@@ -2,11 +2,10 @@ Pre-Interview Questions:
 
 1) Q: Mental Math: One million minus one hundred eleven.
 A: 1000000 - 111 = 999889, trying solving quickly in mind
+1000000 - 111 = 999000 + 1000 - 100 - 10 - 1 = 999889
 
-
-2) Q: Mental Math: Fifty-four percent of one hundred ten.
-A: 1000 * 0.54 + 10 * 0.54 = 540 + 5.4 = 545.4, my approache
-
+2) Q: Mental Math: Fifty-four percent of one hundred ten. 54% of 110
+A: 100 * 0.54 + 10 * 0.54 = 54 + 5.4 = 59.4
 
 3) Q: Game: With one die, suppose in a round, you earn the amount of dollars equal to the value of the upwards face of the die. (eg. you earn $6 if you roll a six.) Now also suppose after your first roll, you are given the opportunity to cancel your first and roll again, taking that value as the final value. What should your strategy be?
 A: If you're only rolling once, then the expected value of the game is 3.5. So, if your first roll is a 1, 2, or 3, you should opt to roll again, and if you receive a 4, 5, or 6, then you should keep that value.
@@ -43,6 +42,7 @@ A: find 10% of 97 = 9.7;
 find 5% of 97 is 9.7 / 2 = 4.85
 find 1% of 97 is 97 / 100 = 0.97
 Totally, 4.85 - 0.97 = 3.88 is 4% of 97
+Quick: 0.04(100 - 3) = 4 - 0.12 = 3.88
 
 
 9) Q: 1 million minus 111?
@@ -52,6 +52,7 @@ A: 999000 + 1000 - 100 - 10 - 1 = 999000 + 889 = 999889
 10) Q: 5% of 98?
 A: 10% of 98 = 9.8
 5% is 9.8 / 2 = 4.9
+Quick: 0.05(100 - 2) = 5 - 0.1 = 4.9
 
 
 11) Q: 42 squared?
@@ -64,7 +65,7 @@ A: find closest tens number 40; distance is 42-40 = 2
 A: find 5% of 47, which is 2.35
 find 1% of 47, which is 0.47. multiply 1% * 2 = 0.94
 5% - 2% = 2.35 - 0.94 = 1.41
-
+Quick: 0.03(50 - 3) = 1.5 - 0.09 = 1.41
 
 13) Q: 58 squared ?
 A: find closest tens number 60, distance 60-58 = 2
@@ -78,6 +79,39 @@ A: 999900 + 100 - 10 - 2 = 88 = 999988
 A: There is a lot answer you will say, the main reason some kind of question, to looking how you are analysis. The important thing is to find something that makes sense to you, after all it is you and your idead that are being interviewed.
 
 
+16) Q: One million minus one hundred eleven.  
+A: 1000000 - 111 = 999000 + 1000 - 100 - 10 - 1 = 999000 + 889 = 999889 
+
+
+17) Q: what is 60% of 990  
+A: 
+Slow way: 990 * .6 = 99 * 6 = 99 * 5 + 99 = 495 + 99 = 594
+Quick way: .6(1000-10) = 600-6 = 594
+
+
+18) Q: 17^17 what is the final digit 
+A: 7 * 1 = 7
+7 * 7 = 49
+7 * 9 = 63
+7 * 3 = 21
+7 * 1 = 7 <- cycle
+17^(17 % 4) % 10 = 7
+
+
+19) Q: 15% of 156
+A: 10% = 15.6; 5% = 15.6 / 2 = 7.8; 15% = 23.4
+Quick: .15(160 - 4) = 24 - .6 = 23.4
+
+
+20) Q: what is 2^10?  
+A: 1024 
+
+21) Q: 567*39  
+A: 22113
+
+
+22) Q: 12% of 47
+A: 0.12(50 - 3) = 6 - 0.36 = 5.64
 
 Interview Questions:
 
@@ -133,6 +167,7 @@ A:
 
 
 12) Q: Poker. 26 red, 26 black. Take one every time, you can choose to guess whether it’s red. You have only one chance. If you are right, you get 1 dollar. What’s the strategy? And what’s the expected earn?
+
 A: There is symmetry between red and black. Each time you pull a card it is equally likely to be red or black (assuming you haven't looked at the previous cards you pulled). Thus no matter when you guess you odds are 50% and the expected return should be 50 cents. P(x = red) = 26 / 52 = 1/2
 
 
@@ -256,9 +291,159 @@ A: http://mathworld.wolfram.com/CoinProblem.html
 24) Q: What is the day of the week 10 years from today?  
 A: every 4 years the days moves forward for 5 days
 if today is monday (labeled as 1), 4 years later it's 6-day
-10 years later, it's 1 + 5 + 5 + 2 day = 13 day = 6 day = saturday .
+10 years later, it's 1 + 5 + 5 + 2 day = 13 day = 6 day = saturday;
 
-23 Saturday 2018
-7 + 5 + 5 + 2 = 19 % 7 = 5
-23 Friday 2028 ? 
+24 Monday 2018
+1 + 5 + 5 + 3 = 14 % 7 = 0 (Sunday)
+24 Sunday 2028, 
+
+
+25) Q: Flip a fair coin 8 times. What's the probability that the number of heads is a multiple of 3?
+A: All combinations is 2^8 = 256,
+Multiple of 3; is 0, 3, 6
+to getting 0, 8C0 = 8!/8! = 1
+to getting 3, 8C3 = 8!/3!/5! = 56
+to getting 6, 8C6 = 8!/6!/2! = 28
+
+Answer = 1 * 56 * 28 / 256 = 85/256 = 0.332
+
+
+26) Q: You have a 2x1x1 brick. Define the distance between two points on the brick to be the infimum of the lengths of all paths between them on the brick. What is the maximum possible distance between two points on the brick?
+A: Using Pythagors theorem c^2 = a^2 + b^2
+The shortest path has length sqrt(6).
+sqrt(1^2 + 1^2) = sqrt(1 + 1) = sqrt(2)
+sqrt(2^2 + sqrt(2)^2) = sqrt(4 + 2) = sqrt(6)
+
+
+27) Q: You are given a bag with tiles from 0 to 9 and a decimal point tile. The tiles will be pulled from the bag one at a time and placed on the table. The resulting number will be your prize. Compute the value of this prize.  
+A: To clarify, the average value was obtained by noting that for each place the expected value is the expected value of 0-9 = 4.5. So the average value is 4.5*10^9 + 4.5*10^9 + ... + 4.5 = 4,999,999,999.5.
+
+The average value is 4999999999.5
+if the decimal point is at the bottom. Each place where the decimal point goes has a 1/11 chance being chosen. Therefore, the answer is 1/11(4999999999.5(1+10−1+10−2+10−3+10−4+10−5+10−6+10‌−7+10−8+10−9+10−10)=5.0505050499494949495×10^8
+
+https://math.stackexchange.com/questions/1549275/expected-value-of-number-comprising-randomly-selected-digits-and-a-decimal-point
+
+
+
+28) Q: Two dice. One 10-sided, one 6-sided. Guess a number between 2 and 16, if the sum of the dice shows that number, you get that number of dollars. What is the best number to guess to maximise winnings?
+A: If you get: probability to win: expected gain :
+		2   	1/60    2/60
+		3   	2/60    6/60
+		4   	3/60   12/60
+		5   	4/60   20/60
+		6   	5/60   30/60
+		7   	6/60   42/60
+		8   	6/60   48/60
+		9   	6/60   54/60
+		10  	6/60   60/60
+		11  	6/60   66/60
+		12  	5/60   60/60
+		13  	4/60   52/60
+		14  	3/60   42/60
+		15  	2/60   30/60
+		16  	1/60   16/60
+Therefore to maximize the expected winnings, you must chose 11.
+
+
+29) Q: Three coins are in a bag. The first coin flips heads with probability 50%, the second coin flips heads with probability 60%, and the third coin flips heads with probability 70%. I pull out a coin and flip heads. If I flip this coin again, what is the probability I will get heads?  
+A: Coins 1,2,3 are events when you have coins 1,2,3 and H is the event you get heads.
+P(1 coin is h) = 0.5 / (0.5 + 0.6 + 0.7) = 0.5 / 1.8
+P(2 coin is h) = 0.6 / 1.8
+P(3 coin is h) = 0.7 / 1.8
+Let's calculate probability of second flip:
+P(second flip is h) = 0.5 / 1.8 * 0.5 + 0.6 / 1.8 * 0.6 + 0.7 / 1.8 * 0.7 = (0.25 + 0.36 + 0.49) / 1.8 = 1.1/1.8 = 0.61
+
+
+30) Q: A cube that is white on the inside is painted blue and then  chopped into thirds along each dimension (resulting in 27 smaller cubes). Blindfolded, I pick a cube at random and toss it in the air so that it lands on the ground with one side down. I open my eyes and see that all of the visible sides of the cube are white. What is the probability that the side that is currently face down is blue?
+A: Getting 7 cubes of 27, where cube has 1 side is blue other 5 is white
+For example, on the below 1 side of cube. Take each *(start) of 6 sides of cube.
+###
+#*#
+###
+
+There are 12 ways this can happen. Either you picked a cube with 1 side blue or you picked the cube with all sides white. There are 6 times as many 1-side-blue cubes, but 6 times as many ways to see all white with one white cube. So it's equal probability. Answer is 1/2
+
+
+31) Q: How many times does the digit 1 appear in all numbers from 1-1000000 inclusive  
+A: I think Candidate is counting all the occurrences of the digit one not just all numbers containing a one. He probably did this by noting that at a given position you can fix it to be 1 and vary the other 5 remaining digits. Since there are 6 possible locations we get 6*100,000 = 600,000 and then we tack on the 1 from the million to get 600,001.
+
+
+32) Q: What is the probability that if you role two dice, the sum is greater than 7?  
+A: Quickest way; The probability of getting more than 7 is equal to the probability of getting less than 7 by symmetry and P(7)=1/6. Hence P(x > 7) = 1/2*(1-1/6) = 5/12.
+
+
+
+33) Q: find the sum 1 + 3 + 5 + ... 99 (odd numbers below 100) = ?  
+A: Simply (99+1)/2 = 50 terms. So 50^2 = 2500
+
+
+34) Q: some easy probability questions like there are 3 days and there is a probability of rain for them. Find the probability that there are at least 2 days without rain.
+A: Let p be probability of rain. Use complement of rain. So this is 1 - P(1 day without rain) - P(all days with rain). So it's 1-(3*p^2*(1-p))-p^3
+
+
+35) Q: there is a grey cube 3x3x3 was colored into red (all of its edges) . Next it was splitted into 1x1x1 cubes. 1 of these small cubes was chosen uniformly and uniformly thrown on a table. Find the P of "You can't see any red edges on this small cube" 
+A: I think the interpretation might be "No sides are visible", meaning you can see all sides but the bottom face.
+
+If that's the case, then this can only work if we pick a face cube (6/27 chance) or a center cube (1/27) since those have 1 or fewer painted faces.
+
+If we pick the face cube, there's a 1/6 chance it rolls with the painted side down.
+If we pick the center cube, no matter how it is rolled it will work.
+
+Thus, with this interpretation, the answer is (6/27)*(1/6) + 1/27 = 2/27.
+
+
+36) Q: You have a shuffled deck of 26 red and 26 black cards. You play a game by repeatedly looking at the top card and either discarding it or ending the game. At the end if the color of the next card matches that of the top card you win, otherwise you lose. What is the optimal strategy?  
+A: https://math.stackexchange.com/questions/2663911/stopping-problem-question?noredirect=1#2664041
+
+
+37) Q: We have a tricycle and we are going to travel on it for a thousand miles. We also have two spare tires with us. If you want each of them to be worn the same by the end of the journey, what is minimum number of stops you have to make in order to achieve this? 
+A: 4 times
+
+
+38) Q: I'm flipping three coins. If all three are the same (all heads or all tails) then I will get 10 dollars and I may finish the game. If it is not the case then I might ask to flip any number of the coins again (to flip one of them or two of them again, etc.). What's the expected gain by playing this game?  
+A: The prob of getting three heads and three tails is 1/8 + 1/8 = 1/4. The other events are all some arrangement of HHT or TTH. There is 3/4 of these occuring. Either way you only flip one coin again to go for HHH or TTT. Flipping that coin gives 1/2 chance of getting three heads and three tails.
+
+The expected value is
+1/4 * 10 + 3/4 * 1/2 * 10 (+ 3/4 * 1/2 * 0)
+= 25/4
+
+
+39) Q: If I spin a roulette, roll a dice, and pick a card out of a  52-card deck, what are the chances that all three are the same number? How confident are you in your answer?
+A: Assuming Aces to be "1", the probability is (4x6)/(52x6x38) = 1/(13x38) = 1/494. Again, you need to be able to do this kind of stuff in your head, and quickly. Lay out all your assumptions (e.g. aces are "1", or aces are not "1"), and you should ask in cases you are not sure (if you didn't know a roulette as 38 slots).
+
+For part 2, the interviewer may ask you to bet on your answer with him. This is just a test of how confident you are. For example, I initially arrived at the wrong answer because I thought there were 36 slots in a roulette. I did the calculation right with the wrong number, and I said I was 95% confident. He made a bet with me, where he asked me how much I'd be willing to bet, if he gave me $1 if I were right. Needless to say I lost $19 :(
+
+
+40) Q: If you flip ten coins, what is the expected value of the  product of the number of heads times the number of tails? You have 3 minutes with a pen and paper, and at the end of that, I want you to give me a range.
+A:  You can calculate it easily. Let X be the number of heads. We know that E[X]=5, var(X) = 5/2. Then,
+E[X(10-X)] = E[10X - X^2] = 10E[X] - E[X^2] = 10E[X] - (var(X)+(E[X])^2) = 10*5 - 5/2 - 5^2 = 22.5
+
+
+41) Q: 3 digit number find the probability that the first digit is even, second digit is odd and the third digit is different from the first two digits.  
+A: 
+1st digit can be even is 2, 4, 6, 8, cannot be 0 => 4 / 9
+2nd digit can be odd is 1, 3, 5, 7, 9 => 5 / 10
+3nd digit can be any 8 remaining numbers => 8 / 10
+
+answer: 4/9 * 5/10 * 8/10 = 160 / 900 = 8 / 45 = 0,1777777778
+
+
+42) Q: You have a number, and the product of its digits is 96. None of the digits is 1. What is the largest and smallest number you can think of?  
+A: 
+96 / 2 = 48 / 2 = 24 / 2 = 12 / 2 = 6 / 2 = 3
+96 = 2^5 * 3 = 2 * 6 * 8
+
+
+43) Q: Probability the first eight prime numbers gives you an odd sum.  
+A: 
+
+
+44) Q: If I pick 2 cards from a shuffled deck (with no jokers) what is the probability that they are both a queen?
+A: P(x is queen) = 4 / 52 = 1 / 13
+P(x2 is queen) = 3 / 51 
+P(x and x2 is queen) = 1 * 3 / 13 * 51 = 3 / 661
+
+45) Q: i) If I toss 4 fair coins, I get a dollar for every head, what is the value of this game?
+   ii) If I have the option to re-toss all 4 coins and must take the value of the second rounds result, what is the value of the game now?
+A: Expected Value is 2 dollars ($0.5 per coin toss). 4) EV = $3 ($0.75 per coin toss)
 
