@@ -27,7 +27,9 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/bits)
 - Back Tracking
   - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/back_tracking)
-
+- Divide and Conquer
+  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/divide_n_conquer)
+ 
 ## Data Science interview preparation
 - SQL
   - [hackerrank](https://github.com/EldanGS/bversatile/tree/master/SQL/hackerrank)
