@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/add-digits/description/
 
 """
-1 solution, basic.
+1st solution, basic.
 Complexity analysis:
 Time: O(logN) - always
 Memory: O(1) - in worst case
@@ -24,7 +24,7 @@ class Solution:
         
 
 """
-1 solution, basic.
+2nd solution, basic.
 Complexity analysis:
 Time: O(logN) - always
 Memory: O(1) - in worst case
