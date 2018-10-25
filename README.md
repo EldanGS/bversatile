@@ -38,4 +38,7 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   
 ## Software Engineering interview preparation
 - Cracking the Coding Interview 6th Edition
-  - [C++ Solutions](https://github.com/EldanGS/bversatile/tree/master/Problems/CtCI-6th-Edition)
+  - [C++ Solution](https://github.com/EldanGS/bversatile/tree/master/Problems/CtCI-6th-Edition)
+
+- Elements of Programming Interviews in Python
+  - [Solution](https://github.com/EldanGS/bversatile/tree/master/Problems/EPI)
