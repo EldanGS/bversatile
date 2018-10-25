@@ -6,7 +6,7 @@ Memory: O(1) - always
 """
 
 class Solution:
-	def swapBits(self, x, i, j):
+	def swap_bits(self, x, i, j):
 		if (x >> i) & 1 != (x >> j) & 1:
 			bitmask = (1 << i) | (1 << j)
 			x ^= bitmask
@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	j = 0
 
 	"""
-			 0 1 2 3	
+			 3 2 1 0	
 		11 = 1 0 1 1
 		i = 2
 		j = 0
@@ -43,5 +43,5 @@ if __name__ == '__main__':
 	"""
 	Solution = Solution()
 
-	print(Solution.swapBits(x, i, j))
+	print(Solution.swap_bits(x, i, j))
 

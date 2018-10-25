@@ -6,7 +6,7 @@ Memory: O(1) - always
 """
 
 class Solution1:
-	def computingParity(self, x):
+	def computing_parity(self, x):
 		result = 0
 		while x > 0:
 			result ^= x & 1
@@ -22,7 +22,7 @@ Time: O(1) - always
 Memory: O(1) - always
 """
 class Solution2:
-	def computingParity(self, x):
+	def computing_parity(self, x):
 		x ^= x >> 32
 		x ^= x >> 16
 		x ^= x >> 8
@@ -38,8 +38,8 @@ if __name__ == '__main__':
 	solution2 = Solution2()
 	for x in range(10):
 		print('X is {}'.format(x))
-		print('Computing the Parity of a Word, Solution 1: {}'.format(solution1.computingParity(x)))
-		print('Computing the Parity of a Word, Solution 2: {}\n'.format(solution2.computingParity(x)))
+		print('Computing the Parity of a Word, Solution 1: {}'.format(solution1.computing_parity(x)))
+		print('Computing the Parity of a Word, Solution 2: {}\n'.format(solution2.computing_parity(x)))
 	
 	
 

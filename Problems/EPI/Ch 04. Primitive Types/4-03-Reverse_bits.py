@@ -6,7 +6,7 @@ Memory: O(1) - always
 """
 
 class Solution:
-	def reverseBits(self, n):
+	def reverse_bits(self, n):
 		reverse = 0
 		for _ in range(32):
 			reverse = (reverse << 1) + (n & 1)
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     x = 43261596
     Solution = Solution()
     
-    print(Solution.reverseBits(x))
+    print(Solution.reverse_bits(x))
 
     """
 	Input: 43261596
