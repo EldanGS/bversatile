@@ -3,7 +3,7 @@ import math
 """
 Solution.
 Complexity analysis:
-Time: O(N) - always
+Time: O(logN) - in worst case
 Memory: O(1) - always
 """
 
