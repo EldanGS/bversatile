@@ -42,3 +42,6 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
 
 - Elements of Programming Interviews in Python
   - [Solution](https://github.com/EldanGS/bversatile/tree/master/Problems/EPI)
+  
+- Daily Coding Problem
+  - [Python Solution](https://github.com/EldanGS/bversatile/tree/master/Problems/daily-coding-problem)
