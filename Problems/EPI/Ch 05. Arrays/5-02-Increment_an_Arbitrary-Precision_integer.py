@@ -1,3 +1,5 @@
+from test_framework import generic_test
+
 """
 Solution.
 Complexity analysis:
@@ -21,6 +23,6 @@ def plus_One(A):
 	return A
 
 if __name__ == '__main__':
-	A = [9, 9]
-
-	print(plus_One(A))
+    exit(
+        generic_test.generic_test_main("int_as_array_increment.py",
+                                       "int_as_array_increment.tsv", plus_One))
