@@ -33,4 +33,4 @@ def parity2(x):
 
 
 if __name__ == '__main__':
-    exit(generic_test.generic_test_main("parity.py", 'parity.tsv', parity2))
+    exit(generic_test.generic_test_main("4-01-parity.py", 'parity.tsv', parity2))

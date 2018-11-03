@@ -2,7 +2,7 @@ from test_framework import generic_test, test_utils
 
 
 def permutations(A):
-    # TODO - you fill in here.
+
     return []
 
 
