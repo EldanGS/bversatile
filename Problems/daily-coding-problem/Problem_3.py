@@ -47,7 +47,7 @@ def serialize(root):
 	values = []
 	def serializer(node):
 		if not node:
-			values.append('?')
+			values.append('null')
 		else:
 			values.append(str(node.value))
 			serializer(node.left)
@@ -60,7 +60,7 @@ def deserialize(s):
     values = iter(s.split(','))
     def deserializer():
         val = next(values)
-        if val == '?':
+        if val == 'null':
             return None
         else:
             node = Node(int(val))
