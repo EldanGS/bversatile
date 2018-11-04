@@ -17,26 +17,27 @@ Time: O(N) - always
 Memory: O(N) - always
 """
 
+
 def multiply(A):
-	n = len(A)
-	result = [0] * n
-	product = 1
+    n = len(A)
+    result = [0] * n
+    product = 1
 
-	for i in range(n):
-		result[i] = product
-		product *= A[i]
+    for i in range(n):
+        result[i] = product
+        product *= A[i]
 
-	product = 1
-	for i in reversed(range(n)):
-		result[i] *= product
-		product *= A[i]
+    product = 1
+    for i in reversed(range(n)):
+        result[i] *= product
+        product *= A[i]
 
+    return result
 
-	return result
 
 if __name__ == '__main__':
-	A = [1, 2, 3, 4, 5]
-	
-	print('Product of Array Except Self')
-	print('Before: {}'.format(A))
-	print('After: {}'.format(multiply(A)));
+    A = [1, 2, 3, 4, 5]
+
+    print('Product of Array Except Self')
+    print('Before: {}'.format(A))
+    print('After: {}'.format(multiply(A)));

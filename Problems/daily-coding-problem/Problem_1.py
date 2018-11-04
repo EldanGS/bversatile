@@ -15,20 +15,21 @@ Time: O(N) - in worst case
 Memory: O(N) - in worst case
 """
 
+
 def find_target(A, target):
-	data = {}
-	for num in A:
-		temp = target - num
-		if data.get(temp):
-			return True
+    data = {}
+    for num in A:
+        temp = target - num
+        if data.get(temp):
+            return True
 
-		data[num] = 1
+        data[num] = 1
 
-	return False
+    return False
 
 
 if __name__ == '__main__':
-	A = [10, 15, 3, 7]
-	target = 17
+    A = [10, 15, 3, 7]
+    target = 17
 
-	print(find_target(A, target))
+    print(find_target(A, target))

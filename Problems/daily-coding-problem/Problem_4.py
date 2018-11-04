@@ -8,7 +8,20 @@ For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should g
 You can modify the input array in-place.
 """
 
+
 def firstMissingPositive(numbers):
-	
+    n = len(numbers)
+    for i in range(n):
+        while (0 < numbers[i] <= n) and (numbers[i] != numbers[numbers[i] - 1]):
+            numbers[numbers[i] - 1], numbers[i] = numbers[i], numbers[numbers[i] - 1]
+
+    for i in range(n):
+        if numbers[i] != i + 1:
+            return i + 1
+
+    return n + 1
+
 
 if __name__ == '__main__':
+    numbers = [3, 4, -1, 1]  # [1, 2, 0]
+    print(firstMissingPositive(numbers))
