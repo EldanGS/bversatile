@@ -6,17 +6,28 @@ from test_framework.random_sequence_checker import (
     compute_combination_idx, run_func_with_retries)
 from test_framework.test_utils import enable_executor_hook
 
+import random
+import itertools
+
 
 # Assumption: there are at least k elements in the stream.
 def online_random_sample(stream, k):
-    # TODO - you fill in here.
-    return []
+    result = list(itertools.islice(stream, k))
+
+    num_seen_so_far = k
+    for x in stream:
+        num_seen_so_far += 1
+        idx_to_replace = random.randrange(num_seen_so_far)
+
+        if idx_to_replace < k:
+            result[idx_to_replace] = x
+    return result
 
 
 @enable_executor_hook
 def online_random_sample_wrapper(executor, stream, k):
     def online_random_sample_runner(executor, stream, k):
-        results = executor.run(lambda : [online_random_sample(iter(stream), k) for _ in range(100000)])
+        results = executor.run(lambda: [online_random_sample(iter(stream), k) for _ in range(100000)])
 
         total_possible_outcomes = binomial_coefficient(len(stream), k)
         stream = sorted(stream)
@@ -34,6 +45,6 @@ def online_random_sample_wrapper(executor, stream, k):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("online_sampling.py",
+        generic_test.generic_test_main("5-13-online_sampling.py",
                                        "online_sampling.tsv",
                                        online_random_sample_wrapper))

@@ -6,10 +6,18 @@ from test_framework.random_sequence_checker import (
     compute_combination_idx, run_func_with_retries)
 from test_framework.test_utils import enable_executor_hook
 
+import random
+
 
 def random_subset(n, k):
-    # TODO - you fill in here.
-    return []
+    changed_elements = {}
+    for i in range(k):
+        rand_idx = random.randrange(i, n)
+        rand_idx_mapped = changed_elements.get(rand_idx, rand_idx)
+        i_mapped = changed_elements.get(i, i)
+        changed_elements[rand_idx] = i_mapped
+        changed_elements[i] = rand_idx_mapped
+    return [changed_elements[i] for i in range(k)]
 
 
 @enable_executor_hook
@@ -33,5 +41,5 @@ def random_subset_wrapper(executor, n, k):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("random_subset.py", 'random_subset.tsv',
+        generic_test.generic_test_main("5-15-random_subset.py", 'random_subset.tsv',
                                        random_subset_wrapper))

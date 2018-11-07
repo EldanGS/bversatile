@@ -12,7 +12,7 @@ def zero_one_random():
 
 
 def uniform_random(lower_bound, upper_bound):
-    # TODO - you fill in here.
+
     return 0
 
 
