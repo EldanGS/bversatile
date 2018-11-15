@@ -25,5 +25,5 @@ def largest_sum(A):
 
 
 if __name__ == '__main__':
-    A = [2, 4, 6, 2, 5] #[5, 1, 1, 5]
+    A = [2, 4, 6, 2, 5]  # [5, 1, 1, 5]
     print(largest_sum(A))
