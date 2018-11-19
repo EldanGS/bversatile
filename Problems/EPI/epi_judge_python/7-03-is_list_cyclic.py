@@ -6,7 +6,16 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def has_cycle(head):
-    # TODO - you fill in here.
+    fast = slow = head
+
+    while fast and fast.next and fast.next.next:
+        slow, fast = slow.next, fast.next.next
+        if slow is fast:
+            slow = head
+            while slow is not fast:
+                slow, fast = slow.next, fast.next
+
+            return slow
     return None
 
 
@@ -59,4 +68,4 @@ def has_cycle_wrapper(executor, head, cycle_idx):
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "is_list_cyclic.py", 'is_list_cyclic.tsv', has_cycle_wrapper))
+            "7-03-is_list_cyclic.py", 'is_list_cyclic.tsv', has_cycle_wrapper))

@@ -6,8 +6,7 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def overlapping_lists(l0, l1):
-    # TODO - you fill in here.
-    return None
+    pass
 
 
 @enable_executor_hook
