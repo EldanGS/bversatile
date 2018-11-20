@@ -5,19 +5,21 @@ Time: O(logN) - always
 Memory: O(1) - always
 """
 
-class Solution:
-	def reverse_bits(self, n):
-		reverse = 0
-		for _ in range(32):
-			reverse = (reverse << 1) + (n & 1)
-			n >>= 1
 
-		return reverse
+class Solution:
+    def reverse_bits(self, n):
+        reverse = 0
+        for _ in range(32):
+            reverse = (reverse << 1) + (n & 1)
+            n >>= 1
+
+        return reverse
+
 
 if __name__ == '__main__':
     x = 43261596
     Solution = Solution()
-    
+
     print(Solution.reverse_bits(x))
 
     """
