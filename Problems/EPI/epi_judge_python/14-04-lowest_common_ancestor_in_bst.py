@@ -8,8 +8,13 @@ from test_framework.test_utils import enable_executor_hook
 
 # Input nodes are nonempty and the key at s is less than or equal to that at b.
 def find_LCA(tree, s, b):
-    # TODO - you fill in here.
-    return None
+    while tree.data < s.data or tree.data > b.data:
+        while tree.data < s.data:
+            tree = tree.right
+        while tree.data > b.data:
+            tree = tree.left
+
+    return tree
 
 
 @enable_executor_hook
@@ -24,6 +29,6 @@ def lca_wrapper(executor, tree, s, b):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("lowest_common_ancestor_in_bst.py",
+        generic_test.generic_test_main("14-04-lowest_common_ancestor_in_bst.py",
                                        'lowest_common_ancestor_in_bst.tsv',
                                        lca_wrapper))
