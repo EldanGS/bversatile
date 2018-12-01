@@ -3,21 +3,33 @@ from test_framework.test_failure import TestFailure
 
 
 class Queue:
+    SCALE_FACTOR = 2
+
     def __init__(self, capacity):
-        # TODO - you fill in here.
-        return
+        self._entries = [None] * capacity
+        self._head = self._tail = self._num_queue_elements = 0
 
     def enqueue(self, x):
-        # TODO - you fill in here.
-        return
+        if self._num_queue_elements == len(self._entries):
+            self._entries = (
+                    self._entries[self._head:] + self._entries[:self._head])
+            self._head, self._tail = 0, self._num_queue_elements
+            self._entries += [None] * (len(self._entries) * Queue.SCALE_FACTOR - len(self._entries))
+
+        self._entries[self._tail] = x
+        self._tail = (self._tail + 1) % len(self._entries)
+        self._num_queue_elements += 1
 
     def dequeue(self):
-        # TODO - you fill in here.
-        return 0
+        if not self._num_queue_elements:
+            raise IndexError('empty queue')
+        self._num_queue_elements -= 1
+        result = self._entries[self._head]
+        self._head = (self._head + 1) % len(self._entries)
+        return result
 
     def size(self):
-        # TODO - you fill in here.
-        return 0
+        return self._num_queue_elements
 
 
 def queue_tester(ops):
@@ -44,5 +56,5 @@ def queue_tester(ops):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("circular_queue.py",
+        generic_test.generic_test_main("8-07-circular_queue.py",
                                        'circular_queue.tsv', queue_tester))
