@@ -7,8 +7,26 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def lca(node0, node1):
-    # TODO - you fill in here.
-    return None
+    def get_depth(node):
+        depth = 0
+        while node:
+            node = node.parent
+            depth += 1
+        return depth
+
+    depth0, depth1 = map(get_depth, (node0, node1))
+    if depth1 > depth0:
+        node0, node1 = node1, node0
+
+    depth_diff = abs(depth0 - depth1)
+    while depth_diff:
+        node0 = node0.parent
+        depth_diff -= 1
+
+    while node0 is not node1:
+        node0, node1 = node0.parent, node1.parent
+
+    return node0
 
 
 @enable_executor_hook
@@ -24,6 +42,6 @@ def lca_wrapper(executor, tree, node0, node1):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("lowest_common_ancestor_with_parent.py",
+        generic_test.generic_test_main("9-04-lowest_common_ancestor_with_parent.py",
                                        'lowest_common_ancestor.tsv',
                                        lca_wrapper))
