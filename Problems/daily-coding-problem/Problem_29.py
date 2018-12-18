@@ -15,15 +15,13 @@ You can assume the string to be decoded is valid.
 def encode(s):
     if not s:
         raise ValueError('String is empty')
-    if len(s) == 1:
-        return '1' + s
 
     result, count = '', 1
-    for i in range(len(s) - 1):
-        if s[i + 1] == s[i]:
+    for i in range(1, len(s)):
+        if s[i - 1] == s[i]:
             count += 1
         else:
-            result += str(count) + s[i]
+            result += str(count) + s[i - 1]
             count = 1
 
     result += str(count) + s[-1]
@@ -32,5 +30,5 @@ def encode(s):
 
 if __name__ == '__main__':
     s = 'AAAABBBCCDAA'
-    s = 'AABCCD'
+    s = 'A'
     print(encode(s))
