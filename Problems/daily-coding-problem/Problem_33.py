@@ -32,7 +32,7 @@ class MedianFinder:
     def find_median(self):
         small, large = self.heaps
         if len(large) > len(small):
-            return float(large[0])
+            return large[0]
         return (large[0] - small[0]) / 2
 
 
