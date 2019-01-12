@@ -1,23 +1,31 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
+import collections
 
 
+# O(1) for hash-table, O(1) for update; O(1) overall
 class LruCache:
     def __init__(self, capacity):
-        # TODO - you fill in here.
+        self._isbn_price_table = collections.OrderedDict()
+        self._capacity = capacity
         return
 
     def lookup(self, isbn):
-        # TODO - you fill in here.
-        return 0
+        if isbn not in self._isbn_price_table:
+            return -1
+        price = self._isbn_price_table.pop(isbn)
+        self._isbn_price_table[isbn] = price
+        return price
 
     def insert(self, isbn, price):
-        # TODO - you fill in here.
-        return
+        if isbn in self._isbn_price_table:
+            price = self._isbn_price_table.pop(isbn)
+        elif len(self._isbn_price_table) == self._capacity:
+            self._isbn_price_table.popitem(last=False)
+        self._isbn_price_table[isbn] = price
 
     def erase(self, isbn):
-        # TODO - you fill in here.
-        return True
+        return self._isbn_price_table.pop(isbn, None) is not None
 
 
 def run_test(commands):
@@ -45,5 +53,5 @@ def run_test(commands):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("lru_cache.py", 'lru_cache.tsv',
+        generic_test.generic_test_main("12-3-lru_cache.py", 'lru_cache.tsv',
                                        run_test))
