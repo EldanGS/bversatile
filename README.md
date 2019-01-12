@@ -8,27 +8,11 @@ Implementations of different [algorithms](https://github.com/EldanGS/bversatile/
   - [graph](https://github.com/EldanGS/bversatile/tree/master/Algorithms/Graph)
   - [string](https://github.com/EldanGS/bversatile/tree/master/Algorithms/String)
 ## Problems solutions
-- Array
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/array)
-  - [hackerrank](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/array)
-- Math
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/math)
-- String
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/string)
-- Tree
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/tree)
-- Dynamic Programming
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/dynamic)
-- Linked List
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/linked_list)
-- Binary Search
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/binary_search)
-- Bits Manipulation
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/bits)
-- Back Tracking
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/back_tracking)
-- Divide and Conquer
-  - [leetcode](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode/divide_n_conquer)
+- Leetcode problems
+  - [Python solutions](https://github.com/EldanGS/bversatile/tree/master/Problems/leetcode)
+- Hackerrank problems
+  - [Array](https://github.com/EldanGS/bversatile/tree/master/Problems/hackerrank/array)
+
  
 ## Data Science interview preparation
 - SQL
