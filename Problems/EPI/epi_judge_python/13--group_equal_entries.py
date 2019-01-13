@@ -9,8 +9,23 @@ Person = collections.namedtuple('Person', ('age', 'name'))
 
 
 def group_by_age(people):
-    # TODO - you fill in here.
-    return
+    age_to_count = collections.Counter((person.age for person in people))
+    age_to_offset, offset = {}, 0
+    for age, count in age_to_count.items():
+        age_to_offset[age] = offset
+        offset += count
+
+    while age_to_offset:
+        from_age = next(iter(age_to_offset))
+        from_idx = age_to_offset[from_age]
+        to_age = people[from_idx]
+        to_idx = age_to_offset[people[from_idx].age]
+        people[from_idx], people[to_idx] = people[to_idx], people[from_idx]
+        age_to_count[to_age] -= 1
+        if age_to_count[to_age]:
+            age_to_count[to_age] = to_idx + 1
+        else:
+            del age_to_offset[to_age]
 
 
 @enable_executor_hook
@@ -44,6 +59,6 @@ def group_by_age_wrapper(executor, people):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("group_equal_entries.py",
+        generic_test.generic_test_main("13--group_equal_entries.py",
                                        'group_equal_entries.tsv',
                                        group_by_age_wrapper))

@@ -9,8 +9,17 @@ Interval = collections.namedtuple('Interval', ('left', 'right'))
 
 
 def add_interval(disjoint_intervals, new_interval):
-    # TODO - you fill in here.
-    return []
+    i, result = 0, []
+    while i < len(disjoint_intervals) and new_interval.left > disjoint_intervals[i].right:
+        result.append(disjoint_intervals[i])
+        i += 1
+
+    while i < len(disjoint_intervals) and new_interval.right >= disjoint_intervals[i].left:
+        new_interval = Interval(min(new_interval.left, disjoint_intervals[i].left),
+                                max(new_interval.right, disjoint_intervals[i].right))
+        i += 1
+
+    return result + [new_interval] + disjoint_intervals[i:]
 
 
 @enable_executor_hook
@@ -34,7 +43,7 @@ def res_printer(prop, value):
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "interval_add.py",
+            "13-7-interval_add.py",
             'interval_add.tsv',
             add_interval_wrapper,
             res_printer=res_printer))
