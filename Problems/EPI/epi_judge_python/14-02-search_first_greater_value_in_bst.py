@@ -5,12 +5,11 @@ def find_first_greater_than_k(tree, k):
     subtree, first_so_far = tree, None
     while subtree:
         if subtree.data > k:
-            subtree, first_so_far = subtree.left, subtree
+            first_so_far, subtree = subtree, subtree.left
         else:
             subtree = subtree.right
 
     return first_so_far
-
 
 def find_first_greater_than_k_wrapper(tree, k):
     result = find_first_greater_than_k(tree, k)

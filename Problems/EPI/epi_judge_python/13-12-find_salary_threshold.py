@@ -10,6 +10,7 @@ def find_salary_cap(target_payroll, current_salaries):
         if unadjusted_salary_sum + adjusted_salary_sum >= target_payroll:
             return (target_payroll - unadjusted_salary_sum) / adjusted_people
         unadjusted_salary_sum += current_salary
+
     return -1.0
 
 
