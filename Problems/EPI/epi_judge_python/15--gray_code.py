@@ -5,7 +5,7 @@ from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
 
-def gray_code(num_bits):
+def gray_code1(num_bits):
     def directed_gray_code(history):
         def differ_by_one_bit(x, y):
             bit_differ = x ^ y
