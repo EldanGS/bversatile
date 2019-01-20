@@ -5,15 +5,38 @@ import functools
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
+from collections import deque
 
 WHITE, BLACK = range(2)
 
 Coordinate = collections.namedtuple('Coordinate', ('x', 'y'))
 
 
+def can_move(x, y, maze):
+    return (0 <= x < len(maze) and 0 <= y < len(maze[x])) and maze[x][y] == WHITE
+
+
 def search_maze(maze, s, e):
-    # TODO - you fill in here.
-    return []
+    def search_maze_helper(curr):
+        if not can_move(curr.x, curr.y, maze):
+            return False
+        path.append(curr)
+        maze[curr.x][curr.y] = BLACK
+        if curr == e:
+            return True
+
+        if any(
+                map(search_maze_helper,
+                    map(Coordinate, (curr.x - 1, curr.x + 1, curr.x, curr.x),
+                        (curr.y, curr.y, curr.y - 1, curr.y + 1)))):
+            return True
+
+        del path[-1]
+        return False
+
+    path = []
+    search_maze_helper(s)
+    return path
 
 
 def path_element_is_feasible(maze, prev, cur):
@@ -49,5 +72,5 @@ def search_maze_wrapper(executor, maze, s, e):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("search_maze.py", 'search_maze.tsv',
+        generic_test.generic_test_main("18-01-search_maze.py", 'search_maze.tsv',
                                        search_maze_wrapper))

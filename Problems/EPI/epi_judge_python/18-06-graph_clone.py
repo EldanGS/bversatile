@@ -11,8 +11,19 @@ class GraphVertex:
 
 
 def clone_graph(graph):
-    # TODO - you fill in here.
-    return GraphVertex(0)
+    if not graph:
+        return None
+    q = collections.deque([graph])
+    vertex_map = {graph: GraphVertex(graph.label)}
+    while q:
+        vertex = q.popleft()
+        for e in vertex.edges:
+            if e not in vertex_map:
+                vertex_map[e] = GraphVertex(e.label)
+                q.append(e)
+            vertex_map[vertex].edges.append(vertex_map[e])
+
+    return vertex_map[graph]
 
 
 def copy_labels(edges):
@@ -57,5 +68,5 @@ def clone_graph_test(k, edges):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("graph_clone.py", 'graph_clone.tsv',
+        generic_test.generic_test_main("18-06-graph_clone.py", 'graph_clone.tsv',
                                        clone_graph_test))
