@@ -7,8 +7,7 @@ from test_framework.test_utils import enable_executor_hook
 Item = collections.namedtuple('Item', ('weight', 'value'))
 
 
-# My solution
-def optimum_subject_to_capacity1(items, capacity):
+def optimum_subject_to_capacity(items, capacity):
     dp = [[0] * (capacity + 1) for _ in range(len(items) + 1)]
     for i in range(len(items) + 1):
         for weight in range(capacity + 1):
@@ -20,24 +19,6 @@ def optimum_subject_to_capacity1(items, capacity):
                 dp[i][weight] = dp[i - 1][weight]
 
     return dp[-1][-1]
-
-
-# Author solution
-def optimum_subject_to_capacity(items, capacity):
-    def calculate_optimum_subject(k, available_capacity):
-        if k < 0:
-            # No items can be chosen.
-            return 0
-        if V[k][available_capacity] == -1:
-            without_curr_utem = calculate_optimum_subject(k - 1, available_capacity)
-            with_curr_item = (0 if available_capacity < items[k].weight
-                              else (
-                    items[k].value + calculate_optimum_subject(k - 1, available_capacity - items[k].weight)))
-            V[k][available_capacity] = max(without_curr_utem, with_curr_item)
-        return V[k][available_capacity]
-
-    V = [[-1] * (capacity + 1) for _ in items]
-    return calculate_optimum_subject(len(items) - 1, capacity)
 
 
 @enable_executor_hook

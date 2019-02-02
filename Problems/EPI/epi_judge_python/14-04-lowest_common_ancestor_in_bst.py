@@ -13,7 +13,6 @@ def find_LCA(tree, s, b):
             tree = tree.right
         while tree.data > b.data:
             tree = tree.left
-
     return tree
 
 

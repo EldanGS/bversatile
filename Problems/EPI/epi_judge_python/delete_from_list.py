@@ -6,7 +6,8 @@ from test_framework.test_utils import enable_executor_hook
 
 # Delete the node past this one. Assume node is not a tail.
 def delete_after(node):
-    pass
+    # TODO - you fill in here.
+    return
 
 
 @enable_executor_hook
