@@ -4,9 +4,9 @@ import math
 
 # Check if a partially filled matrix has any conflicts.
 def is_valid_sudoku(partial_assignment):
-    def has_duplicate(line):
-        line = list(filter(lambda x: x != 0, line))
-        return len(line) != len(set(line))
+    def has_duplicate(partion):
+        partion = list(filter(lambda x: x != 0, partion))
+        return len(partion) != len(set(partion))
 
     n = len(partial_assignment)
     if any(has_duplicate([partial_assignment[i][j] for j in range(n)]) or

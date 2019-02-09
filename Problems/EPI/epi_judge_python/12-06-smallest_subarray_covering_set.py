@@ -9,8 +9,30 @@ Subarray = collections.namedtuple('Subarray', ('start', 'end'))
 
 
 def find_smallest_subarray_covering_set(paragraph, keywords):
-    # TODO - you fill in here.
-    return Subarray(0, 0)
+    keywords_to_cover = collections.Counter(keywords)
+    remaining_to_cover = len(keywords)
+    result, left = Subarray(-1, -1), 0
+
+    for right, p in enumerate(paragraph):
+        if p in keywords_to_cover:
+            keywords_to_cover[p] -= 1
+            if keywords_to_cover[p] >= 0:
+                remaining_to_cover -= 1
+
+        while remaining_to_cover == 0:
+            if result == (-1, -1) or right - left < result.end - result.start:
+                result = Subarray(left, right)
+
+            p1 = paragraph[left]
+            if p1 in keywords_to_cover:
+                keywords_to_cover[p1] += 1
+                if keywords_to_cover[p1] >= 1:
+                    remaining_to_cover += 1
+            left += 1
+
+    return result
+
+
 
 
 @enable_executor_hook
@@ -37,6 +59,6 @@ def find_smallest_subarray_covering_set_wrapper(executor, paragraph, keywords):
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "smallest_subarray_covering_set.py",
+            "12-06-smallest_subarray_covering_set.py",
             "smallest_subarray_covering_set.tsv",
             find_smallest_subarray_covering_set_wrapper))

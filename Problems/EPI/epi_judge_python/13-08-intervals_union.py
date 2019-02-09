@@ -10,8 +10,23 @@ Interval = collections.namedtuple('Interval', ('left', 'right'))
 
 
 def union_of_intervals(intervals):
-    # TODO - you fill in here.
-    return []
+    if not intervals:
+        return []
+
+    intervals.sort(key=lambda x: (x.left.val, not x.left.is_closed))
+    result = [intervals[0]]
+
+    for interval in intervals:
+        if (interval.left.val < result[-1].right.val or
+                interval.left.val == result[-1].right.val and
+                (interval.left.is_closed or result[-1].right.is_closed)):
+            if (interval.right.val > result[-1].right.val or
+                    interval.right.val == result[-1].right.val and interval.right.is_closed):
+                result[-1] = Interval(result[-1].left, interval.right)
+        else:
+            result.append(interval)
+
+    return result
 
 
 @enable_executor_hook
@@ -28,6 +43,6 @@ def union_of_intervals_wrapper(executor, intervals):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("intervals_union.py",
+        generic_test.generic_test_main("13-08-intervals_union.py",
                                        "intervals_union.tsv",
                                        union_of_intervals_wrapper))

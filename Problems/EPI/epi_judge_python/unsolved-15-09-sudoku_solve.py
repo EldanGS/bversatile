@@ -8,7 +8,7 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def solve_sudoku(partial_assignment):
-    # TODO - you fill in here.
+
     return True
 
 
@@ -60,5 +60,5 @@ def solve_sudoku_wrapper(executor, partial_assignment):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("sudoku_solve.py", 'sudoku_solve.tsv',
+        generic_test.generic_test_main("unsolved-15-09-sudoku_solve.py", 'sudoku_solve.tsv',
                                        solve_sudoku_wrapper))

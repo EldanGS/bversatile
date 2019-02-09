@@ -5,7 +5,7 @@ from math import isclose
 def square_root(x):
     left, right = (1.0, x) if x >= 1 else (x, 1.0)
     while not isclose(left, right):
-        mid = (left + right) / 2
+        mid = (left + right) * 0.5
         if mid * mid > x:
             right = mid
         else:
