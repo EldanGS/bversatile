@@ -13,8 +13,15 @@ class BinaryTreeNode:
 
 
 def construct_right_sibling(tree):
-    # TODO - you fill in here.
-    return
+    def merge_right_sibling(start_node):
+        while start_node and start_node.left:
+            start_node.left.next = start_node.right
+            start_node.right.next = start_node.next and start_node.next.left
+            start_node = start_node.next
+
+    while tree and tree.left:
+        merge_right_sibling(tree)
+        tree = tree.left
 
 
 def traverse_next(node):
@@ -52,6 +59,6 @@ def construct_right_sibling_wrapper(executor, tree):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("tree_right_sibling.py",
+        generic_test.generic_test_main("09-16-tree_right_sibling.py",
                                        'tree_right_sibling.tsv',
                                        construct_right_sibling_wrapper))
