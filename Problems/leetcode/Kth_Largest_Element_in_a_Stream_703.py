@@ -6,6 +6,7 @@ Complexity analysis:
 Time: O(N) - in worst case
 Memory: O(K) - in worst case
 """
+import heapq
 
 class KthLargest:
 
