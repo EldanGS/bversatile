@@ -38,6 +38,25 @@ class Solution:
             result += [item + [num] for item in result]
         
         return result
-    
-        
-        
+
+
+"""
+3rd solution, iteratively
+Complexity analysis:
+Time: O(2^N) - in worst case
+Memory: O(N^2) - in worst case
+"""
+class Solution:
+    def subsets(self, nums: 'List[int]') -> 'List[List[int]]':
+        def make_subsets(i, subset):
+            if i == len(nums):
+                subsets.append(subset)
+                return
+
+            make_subsets(i + 1, subset)
+            make_subsets(i + 1, subset + [nums[i]])
+
+        subsets = []
+        make_subsets(0, [])
+
+        return subsets

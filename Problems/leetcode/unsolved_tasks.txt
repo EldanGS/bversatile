@@ -1,7 +1,0 @@
-https://leetcode.com/problems/remove-linked-list-elements/description/
-https://leetcode.com/problems/palindrome-linked-list/description/
-https://leetcode.com/problems/intersection-of-two-linked-lists/description/
-
-
-need resolve:
-https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
