@@ -9,11 +9,14 @@ class Solution:
         if not s or not wordDict:
             return False
 
-        entity_words, visited = {word: True for word in wordDict}, set()
+        entity_words, visited = set(wordDict), set()
         q = collections.deque([0])
 
         while q:
             start = q.popleft()
+
+            if start == len(s):
+                return True
 
             if start not in visited:
                 visited.add(start)
@@ -22,9 +25,6 @@ class Solution:
                     word = s[start:end + 1]
                     if word in entity_words:
                         q.append(end + 1)
-
-                        if end + 1 == len(s):
-                            return True
 
         return False
 

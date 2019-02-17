@@ -20,6 +20,7 @@ def decompose_into_dictionary_words(domain, dictionary):
                 if last_length[j] != -1 and domain[j + 1:i + 1] in dictionary:
                     last_length[i] = i - j
                     break
+
     decomposition = []
     if last_length[-1] != -1:
         idx = len(domain) - 1
