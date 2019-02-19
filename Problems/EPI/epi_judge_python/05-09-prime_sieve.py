@@ -8,7 +8,7 @@ def generate_primes(n):
     for p in range(2, n + 1):
         if is_prime[p]:
             primes.append(p)
-            for j in range(p, n + 1, p):
+            for j in range(p * p, n + 1, p):
                 is_prime[j] = False
 
     return primes

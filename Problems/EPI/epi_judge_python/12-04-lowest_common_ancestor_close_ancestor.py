@@ -14,13 +14,17 @@ def lca(node0, node1):
         if iter0:
             if iter0 in nodes_on_path_to_root:
                 return iter0
+
             nodes_on_path_to_root.add(iter0)
             iter0 = iter0.parent
+
         if iter1:
             if iter1 in nodes_on_path_to_root:
                 return iter1
+
             nodes_on_path_to_root.add(iter1)
             iter1 = iter1.parent
+
     raise ValueError('node1 and node2 are not in the same tree')
 
 

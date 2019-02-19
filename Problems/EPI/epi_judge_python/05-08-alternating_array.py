@@ -6,8 +6,8 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def rearrange(A):
-    # TODO - you fill in here.
-    return
+    for i in range(len(A)):
+        A[i: i + 2] = sorted(A[i: i + 2], reverse=i % 2)
 
 
 @enable_executor_hook
@@ -46,6 +46,6 @@ def rearrange_wrapper(executor, A):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("alternating_array.py",
+        generic_test.generic_test_main("05-08-alternating_array.py",
                                        'alternating_array.tsv',
                                        rearrange_wrapper))
