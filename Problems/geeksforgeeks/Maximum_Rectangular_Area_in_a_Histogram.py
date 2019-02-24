@@ -21,4 +21,3 @@ if __name__ == '__main__':
         N = int(input())
         A = list(map(int, input().split()))
         print(maximum_rectangular_area(A, N))
-       
