@@ -11,6 +11,7 @@ class LruCache:
     def lookup(self, isbn):
         if isbn not in self._isbn_cache_table:
             return -1
+
         price = self._isbn_cache_table.pop(isbn)
         self._isbn_cache_table[isbn] = price
         return price
