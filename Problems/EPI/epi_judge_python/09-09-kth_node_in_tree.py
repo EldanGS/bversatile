@@ -14,7 +14,16 @@ class BinaryTreeNode:
 
 
 def find_kth_node_binary_tree(tree, k):
-    # TODO - you fill in here.
+    while tree:
+        left_size = tree.left.size if tree.left else 0
+        if left_size + 1 < k:  # kth node must be in right subtree of tree
+            k -= left_size + 1
+            tree = tree.right
+        elif left_size == k - 1:  # kth is iter itself
+            return tree
+        else:
+            tree = tree.left
+
     return None
 
 
@@ -38,6 +47,6 @@ def find_kth_node_binary_tree_wrapper(executor, tree, k):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("kth_node_in_tree.py",
+        generic_test.generic_test_main("09-09-kth_node_in_tree.py",
                                        "kth_node_in_tree.tsv",
                                        find_kth_node_binary_tree_wrapper))

@@ -1,23 +1,36 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
+from collections import deque
 
 
 class QueueWithMax:
+    def __init__(self):
+        self._entries = deque()
+        self._candidates_for_max = deque()
+
     def enqueue(self, x):
-        # TODO - you fill in here.
-        return
+        self._entries.append(x)
+        while self._candidates_for_max and self._candidates_for_max[-1] < x:
+            self._candidates_for_max.pop()
+        self._candidates_for_max.append(x)
 
     def dequeue(self):
-        # TODO - you fill in here.
-        return 0
+        if self._entries:
+            result = self._entries.popleft()
+            if result == self._candidates_for_max[0]:
+                self._candidates_for_max.popleft()
+            return result
+
+        raise IndexError('Empty queue')
 
     def max(self):
-        # TODO - you fill in here.
-        return 0
+        if self._candidates_for_max:
+            return self._candidates_for_max[0]
+
+        raise IndexError('Empty queue')
 
 
 def queue_tester(ops):
-
     try:
         q = QueueWithMax()
 
@@ -44,5 +57,5 @@ def queue_tester(ops):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("queue_with_max.py",
+        generic_test.generic_test_main("08-09-queue_with_max.py",
                                        'queue_with_max.tsv', queue_tester))

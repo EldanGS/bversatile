@@ -15,6 +15,7 @@ def inorder_traversal(tree):
             next = tree.right or tree.parent
         else:
             next = tree.parent
+
         prev, tree = tree, next
 
     return result
@@ -22,5 +23,6 @@ def inorder_traversal(tree):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("09-11-tree_inorder.py", 'tree_inorder.tsv',
+        generic_test.generic_test_main("09-11-tree_with_parent_inorder.py",
+                                       'tree_with_parent_inorder.tsv',
                                        inorder_traversal))

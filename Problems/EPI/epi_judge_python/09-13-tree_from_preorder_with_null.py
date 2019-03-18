@@ -31,6 +31,6 @@ def reconstruct_preorder_wrapper(executor, data):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("rewrite-09-13-tree_from_preorder_with_null.py",
+        generic_test.generic_test_main("09-13-tree_from_preorder_with_null.py",
                                        'tree_from_preorder_with_null.tsv',
                                        reconstruct_preorder_wrapper))

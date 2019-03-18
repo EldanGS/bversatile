@@ -1,0 +1,6 @@
+1. 09-12; Reconstruct a binary tree from traversal data
+2. 09-13; Reconstruct a binary tree from preorder traversal with markers
+3. 09-15; Compute the exterior of a binary tree 
+4. 11-09; Find the missing IP address
+5. 11-10; Find the duplicate and missing elements
+6. 12-03; Implement an ISBN cache

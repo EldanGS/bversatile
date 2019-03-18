@@ -6,11 +6,12 @@ def online_median(sequence):
     result, min_heap, max_heap = [], [], []
     for num in sequence:
         heappush(max_heap, -heappushpop(min_heap, num))
-        if len(min_heap) < len(max_heap):
+
+        if len(max_heap) > len(min_heap):
             heappush(min_heap, -heappop(max_heap))
 
-        result.append(min_heap[0] if len(min_heap) > len(max_heap) else
-                      (min_heap[0] - max_heap[0]) / 2)
+        result.append(0.5 * (min_heap[0] + (-max_heap[0]))
+                      if len(min_heap) == len(max_heap) else min_heap[0])
 
     return result
 

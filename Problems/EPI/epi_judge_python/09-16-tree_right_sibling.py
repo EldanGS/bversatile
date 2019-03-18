@@ -12,15 +12,15 @@ class BinaryTreeNode:
         self.next = None  # Populates this field.
 
 
-def construct_right_sibling(tree):
-    def merge_right_sibling(start_node):
-        while start_node and start_node.left:
-            start_node.left.next = start_node.right
-            start_node.right.next = start_node.next and start_node.next.left
-            start_node = start_node.next
+def construct_right_sibling(tree) -> None:
+    def populate_children_next(node):
+        while node and node.left:
+            node.left.next = node.right
+            node.right.next = node.next and node.next.left
+            node = node.next
 
-    while tree and tree.left:
-        merge_right_sibling(tree)
+    while tree:
+        populate_children_next(tree)
         tree = tree.left
 
 

@@ -6,8 +6,12 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def create_list_of_leaves(tree):
-    # TODO - you fill in here.
-    return []
+    if not tree:
+        return []
+    if not tree.left and not tree.right:
+        return [tree]
+
+    return create_list_of_leaves(tree.left) + create_list_of_leaves(tree.right)
 
 
 @enable_executor_hook
@@ -21,6 +25,6 @@ def create_list_of_leaves_wrapper(executor, tree):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("tree_connect_leaves.py",
+        generic_test.generic_test_main("09-14-tree_connect_leaves.py",
                                        "tree_connect_leaves.tsv",
                                        create_list_of_leaves_wrapper))
