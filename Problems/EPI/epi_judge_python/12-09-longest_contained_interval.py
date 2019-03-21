@@ -1,18 +1,19 @@
 from test_framework import generic_test
 
 
-def longest_contained_range(A):
+def longest_contained_range(A) -> int:
     unprocessed_entries = set(A)
     max_interval_size = 0
-    while unprocessed_entries:
-        a = unprocessed_entries.pop()
 
-        lower_bound = a - 1
+    while unprocessed_entries:
+        value = unprocessed_entries.pop()
+
+        lower_bound = value - 1
         while lower_bound in unprocessed_entries:
             unprocessed_entries.remove(lower_bound)
             lower_bound -= 1
 
-        upper_bound = a + 1
+        upper_bound = value + 1
         while upper_bound in unprocessed_entries:
             unprocessed_entries.remove(upper_bound)
             upper_bound += 1

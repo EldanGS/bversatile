@@ -4,9 +4,29 @@ from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
 
-def generate_all_binary_trees(num_nodes):
-    # TODO - you fill in here.
-    return []
+class BinaryTreeNode:
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+
+
+def generate_all_binary_trees(num_nodes: int) -> []:
+    if not num_nodes:
+        return [None]
+
+    result = []
+    for num_left_tree_nodes in range(num_nodes):
+        num_right_tree_nodes = num_nodes - 1 - num_left_tree_nodes
+        left_subtrees = generate_all_binary_trees(num_left_tree_nodes)
+        right_subtrees = generate_all_binary_trees(num_right_tree_nodes)
+
+        result += [
+            BinaryTreeNode(0, left, right)
+            for left in left_subtrees for right in right_subtrees
+        ]
+
+    return result
 
 
 def serialize_structure(tree):
@@ -31,6 +51,6 @@ def generate_all_binary_trees_wrapper(executor, num_nodes):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("enumerate_trees.py",
+        generic_test.generic_test_main("15-08-enumerate_trees.py",
                                        'enumerate_trees.tsv',
                                        generate_all_binary_trees_wrapper))

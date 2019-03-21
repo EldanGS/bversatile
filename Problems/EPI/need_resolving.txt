@@ -4,3 +4,7 @@
 4. 11-09; Find the missing IP address
 5. 11-10; Find the duplicate and missing elements
 6. 12-03; Implement an ISBN cache
+7. 12-11; Collatz checker
+8. 15-08; Generate binary trees
+9. 15-09; Implement a Sudoku solver
+10. 16-09; Pick up coins for maximum gain

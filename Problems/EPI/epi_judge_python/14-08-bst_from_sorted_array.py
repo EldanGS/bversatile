@@ -8,8 +8,10 @@ from test_framework.test_utils import enable_executor_hook
 
 
 class BstNode:
-    def __init__(self, data=0, left=None, right=None):
-        self.data, self.left, self.right = data, left, right
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
 
 
 def build_min_height_bst_from_sorted_array(A):
@@ -18,6 +20,7 @@ def build_min_height_bst_from_sorted_array(A):
             return None
 
         mid = (left + right) // 2
+
         return BstNode(A[mid], build_bst(left, mid), build_bst(mid + 1, right))
 
     return build_bst(0, len(A))

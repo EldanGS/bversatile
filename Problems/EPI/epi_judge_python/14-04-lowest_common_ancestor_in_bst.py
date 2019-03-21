@@ -15,6 +15,7 @@ def find_LCA(tree, s, b):
             tree = tree.right
         else:
             return tree
+
     return None
 
 

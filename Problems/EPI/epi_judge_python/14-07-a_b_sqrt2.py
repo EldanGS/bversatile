@@ -30,6 +30,22 @@ def generate_first_k_a_b_sqrt2(k):
     return result
 
 
+def generate_first_k_a_b_sqrt2(k):
+    cand = [Number(0, 0)]
+    i = j = 0
+    for _ in range(1, k):
+        cand_i_plus_1 = Number(cand[i].a + 1, cand[i].b)
+        cand_j_plus_sqrt2 = Number(cand[j].a, cand[j].b + 1)
+        cand.append(min(cand_i_plus_1, cand_j_plus_sqrt2))
+
+        if cand_i_plus_1.val == cand[-1].val:
+            i += 1
+        if cand_j_plus_sqrt2.val == cand[-1].val:
+            j += 1
+
+    return [a.val for a in cand]
+
+
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main("14-07-a_b_sqrt2.py", 'a_b_sqrt2.tsv',

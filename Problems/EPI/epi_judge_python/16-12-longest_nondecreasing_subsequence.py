@@ -26,7 +26,7 @@ def longest_nondecreasing_subsequence_length(A):
         if max_length[j - 1] <= A[i] < max_length[j]:
             max_length[j] = A[i]
 
-    return len([v for v in max_length if float('-inf') < v < float('inf')])
+    return sum([float('-inf') < v < float('inf') for v in max_length])
 
 
 if __name__ == '__main__':

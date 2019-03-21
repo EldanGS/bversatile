@@ -11,8 +11,7 @@ Event = collections.namedtuple('Event', ('start', 'finish'))
 def find_max_simultaneous_events(A):
     Events = [(x[0], 1) for x in A] + [(x[1], -1) for x in A]
     Events.sort(key=lambda x: (x[0], -x[1]))
-    max_events, current_events = 0, 0
-
+    max_events = current_events = 0
     for event in Events:
         current_events += event[1]
         max_events = max(max_events, current_events)
