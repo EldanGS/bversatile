@@ -8,3 +8,6 @@
 8. 15-08; Generate binary trees
 9. 15-09; Implement a Sudoku solver
 10. 16-09; Pick up coins for maximum gain
+11. 16-11; Pretty printing
+12. 24-03; Buy and Sell a stock K times
+13. 24-06; Rotate an Array

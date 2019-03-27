@@ -21,11 +21,15 @@ def search_maze(maze, s, e):
     def search_path(curr):
         if not can_move(curr.x, curr.y, maze):
             return False
+
         path.append(curr)
         maze[curr.x][curr.y] = BLACK
         if curr == e:
             return True
-        if any(map(search_path, map(Coordinate, (curr.x + 1, curr.x - 1, curr.x, curr.x),
+
+        if any(
+                map(search_path,
+                    map(Coordinate, (curr.x + 1, curr.x - 1, curr.x, curr.x),
                                     (curr.y, curr.y, curr.y + 1, curr.y - 1)))):
             return True
 

@@ -8,8 +8,14 @@ Interval = collections.namedtuple('Interval', ('left', 'right'))
 
 
 def find_minimum_visits(intervals):
-    # TODO - you fill in here.
-    return 0
+    intervals.sort(key=lambda x: x.right)
+    last_visit_time, minimum_visits = float('-inf'), 0
+    for interval in intervals:
+        if interval.left > last_visit_time:
+            last_visit_time = interval.right
+            minimum_visits += 1
+
+    return minimum_visits
 
 
 @enable_executor_hook
@@ -20,6 +26,6 @@ def find_minimum_visits_wrapper(executor, A):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("minimum_points_covering_intervals.py",
+        generic_test.generic_test_main("17-03-minimum_points_covering_intervals.py",
                                        'minimum_points_covering_intervals.tsv',
                                        find_minimum_visits_wrapper))

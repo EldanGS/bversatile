@@ -5,12 +5,12 @@ def number_of_ways(n, m):
     if n > m:
         n, m = m, n
 
-    dp = [1] * n
-    for i in range(1, m):
-        for j in range(1, n):
-            dp[j] += dp[j - 1]
+    number_of_ways = [1] * m
+    for i in range(1, n):
+        for j in range(1, m):
+            number_of_ways[j] += number_of_ways[j - 1]
 
-    return dp[-1]
+    return number_of_ways[-1]
 
 
 if __name__ == '__main__':

@@ -3,17 +3,17 @@ from collections import deque
 
 
 def fill_surrounded_regions(board):
-    m, n = len(board), len(board[0])
-    q = [(i, j) for k in range(n + m)
-         for i, j in ((k, 0), (k, n - 1), (0, k), (m - 1, k))]
+    n, m = len(board), len(board[0])
+    queue = deque([(i, j) for k in range(n) for i, j in ((k, 0), (k, m - 1))] +
+                  [(i, j) for k in range(m) for i, j in ((0, k), (n - 1, k))])
 
-    while q:
-        x, y = q.pop()
-        if 0 <= x < m and 0 <= y < n and board[x][y] == 'W':
+    while queue:
+        x, y = queue.popleft()
+        if 0 <= x < len(board) and 0 <= y < len(board[0]) and board[x][y] == 'W':
             board[x][y] = '#'
-            q += (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)
+            queue.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
 
-    board[:] = [['BW'[c == '#'] for c in row] for row in board]
+    board[:] = [['B' if c != '#' else 'W' for c in row] for row in board]
 
 
 def fill_surrounded_regions_wrapper(board):

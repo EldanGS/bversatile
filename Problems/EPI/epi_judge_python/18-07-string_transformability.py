@@ -5,21 +5,23 @@ import string
 
 # Uses BFS to find the least steps of transformation.
 def transform_string(D, s, t):
-    StringWithDistance = collections.namedtuple('StringWithDistance', ('candidate_string', 'distance'))
+    StringWithDistance = collections.namedtuple('StringWithDistance', ('candidate', 'distance'))
     queue = collections.deque([StringWithDistance(s, 0)])
     D.remove(s)
 
     while queue:
         word = queue.popleft()
-        if word.candidate_string == t:
+
+        if word.candidate == t:
             return word.distance
 
-        for i in range(len(word.candidate_string)):
+        for i in range(len(word.candidate)):
             for c in string.ascii_lowercase:
-                cand = word.candidate_string[:i] + c + word.candidate_string[i + 1:]
-                if cand in D:
-                    queue.append(StringWithDistance(cand, word.distance + 1))
-                    D.remove(cand)
+                next_candidate = word.candidate[:i] + c + word.candidate[i + 1:]
+                if next_candidate in D:
+                    queue.append(StringWithDistance(next_candidate, word.distance + 1))
+                    D.remove(next_candidate)
+
     return -1
 
 

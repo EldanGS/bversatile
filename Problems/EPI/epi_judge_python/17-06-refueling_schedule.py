@@ -37,8 +37,7 @@ def find_ample_city_wrapper(executor, gallons, distances):
 
 
 if __name__ == '__main__':
-    # print(find_ample_city([5, 30, 25, 10, 10, 50, 20], [200, 400, 600, 200, 100, 900, 600]))
     exit(
-        generic_test.generic_test_main("17-07-refueling_schedule.py",
+        generic_test.generic_test_main("17-06-refueling_schedule.py",
                                        'refueling_schedule.tsv',
                                        find_ample_city_wrapper))

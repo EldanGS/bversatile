@@ -12,22 +12,22 @@ class GraphVertex:
 
 
 def is_any_placement_feasible(graph):
-    def bfs(s):
-        s.d = 0
-        q = deque([s])
+    def bfs(node):
+        node.d = 0
+        queue = deque([node])
 
-        while q:
-            for v in q[0].edges:
-                if v.d == -1:
-                    v.d = q[0].d + 1
-                    q.append(v)
-                elif v.d == q[0].d:
+        while queue:
+            vertex = queue.popleft()
+            for edge in vertex.edges:
+                if edge.d == -1:
+                    edge.d = vertex.d + 1
+                    queue.append(edge)
+                elif edge.d == vertex.d:
                     return False
-            del q[0]
 
         return True
 
-    return all(bfs(v) for v in graph if v.d == -1)
+    return all(bfs(node) for node in graph if node.d == -1)
 
 
 @enable_executor_hook

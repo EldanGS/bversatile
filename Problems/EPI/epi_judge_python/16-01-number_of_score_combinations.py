@@ -1,15 +1,28 @@
 from test_framework import generic_test
 
 
+# O(N * M) space and time
 def num_combinations_for_final_score(final_score, individual_play_scores):
-    dp = [[1] + [0] * final_score for _ in individual_play_scores]
+    num_combinations = [[1] + [0] * final_score for _ in individual_play_scores]
     for i in range(len(individual_play_scores)):
         for j in range(1, final_score + 1):
-            teammate_score = dp[i - 1][j] if i > 0 else 0
-            individual_score = dp[i][j - individual_play_scores[i]] if j - individual_play_scores[i] >= 0 else 0
-            dp[i][j] = teammate_score + individual_score
+            without_current_player = num_combinations[i - 1][j] if i >= 1 else 0
+            with_current_player = (num_combinations[i][j - individual_play_scores[i]]
+                                   if j >= individual_play_scores[i] else 0)
+            num_combinations[i][j] = without_current_player + with_current_player
 
-    return dp[-1][-1]
+    return num_combinations[-1][-1]
+
+
+# O(N * M) time, O(M) space
+def num_combinations_for_final_score(final_score, individual_play_scores):
+    num_combinations = [1] + [0] * final_score
+    for i in range(len(individual_play_scores)):
+        for j in range(1, final_score + 1):
+            if j >= individual_play_scores[i]:
+                num_combinations[j] += num_combinations[j - individual_play_scores[i]]
+
+    return num_combinations[-1]
 
 
 if __name__ == '__main__':
