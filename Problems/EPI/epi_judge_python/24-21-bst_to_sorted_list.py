@@ -3,11 +3,30 @@ import functools
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
+from collections import namedtuple
 
 
 def bst_to_doubly_linked_list(tree):
-    # TODO - you fill in here.
-    return None
+    HeadAndTail = namedtuple('HeadAndTail', ('head', 'tail'))
+
+    def bst_to_doubly_linked_list_helper(tree):
+        if not tree:
+            return HeadAndTail(None, None)
+
+        left = bst_to_doubly_linked_list_helper(tree.left)
+        right = bst_to_doubly_linked_list_helper(tree.right)
+
+        if left.tail:
+            left.tail.right = tree
+        tree.left = left.tail
+
+        tree.right = right.head
+        if right.head:
+            right.head.left = tree
+
+        return HeadAndTail(left.head or tree, right.tail or tree)
+
+    return bst_to_doubly_linked_list_helper(tree).head
 
 
 @enable_executor_hook
@@ -31,6 +50,6 @@ def bst_to_doubly_linked_list_wrapper(executor, tree):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("bst_to_sorted_list.py",
+        generic_test.generic_test_main("24-21-bst_to_sorted_list.py",
                                        'bst_to_sorted_list.tsv',
                                        bst_to_doubly_linked_list_wrapper))

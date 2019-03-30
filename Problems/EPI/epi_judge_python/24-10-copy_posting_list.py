@@ -7,8 +7,30 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def copy_postings_list(L):
-    # TODO - you fill in here.
-    return None
+    if not L:
+        return None
+
+    # Makes a copy in each copied node to point to the successor.
+    it = L
+    while it:
+        new_node = PostingListNode(it.order, it.next, None)
+        it.next = new_node
+        it = new_node.next
+
+    # Assigns the jump field in the copied list
+    it = L
+    while it:
+        if it.jump:
+            it.next.jump = it.jump.next
+        it = it.next.next
+
+    # Reverts the original list, and assigns the next field of the copied list
+    it = L
+    new_list_node = it.next
+    while it.next:
+        it.next, it = it.next.next, it.next
+
+    return new_list_node
 
 
 def assert_lists_equal(orig, copy):
@@ -72,6 +94,6 @@ def copy_postings_list_wrapper(executor, l):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("copy_posting_list.py",
+        generic_test.generic_test_main("24-10-copy_posting_list.py",
                                        'copy_posting_list.tsv',
                                        copy_postings_list_wrapper))

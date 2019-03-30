@@ -10,8 +10,20 @@ from test_framework.test_utils import enable_executor_hook
 # list nodes are used as the BST nodes left and right fields, respectively.
 # The length of the list is given.
 def build_bst_from_sorted_doubly_list(l, n):
-    # TODO - you fill in here.
-    return None
+    def build_bst_from_sorted_doubly_list_helper(start, end):
+        if start >= end:
+            return None
+
+        mid = (start + end) // 2
+        left = build_bst_from_sorted_doubly_list_helper(start, mid)
+
+        curr, head[0] = head[0], head[0].next
+        curr.prev = left
+        curr.next = build_bst_from_sorted_doubly_list_helper(mid + 1, end)
+        return curr
+
+    head = [l]
+    return build_bst_from_sorted_doubly_list_helper(0, n)
 
 
 def compare_vector_and_tree(tree, it):
@@ -50,5 +62,5 @@ def build_bst_from_sorted_doubly_list_wrapper(executor, l):
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "sorted_list_to_bst.py", "sorted_list_to_bst.tsv",
+            "24-20-sorted_list_to_bst.py", "sorted_list_to_bst.tsv",
             build_bst_from_sorted_doubly_list_wrapper))

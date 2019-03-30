@@ -11,3 +11,8 @@
 11. 16-11; Pretty printing
 12. 24-03; Buy and Sell a stock K times
 13. 24-06; Rotate an Array
+14. 24-12; Maximum of sliding window
+15. 24-16; Search kth element in two sorted arrays
+16. 24-17; Find the kth largest element - large n, small k
+17. 24-20; Convert a sorted doubly list to BST
+18. 24-21; Convert BST to a sorted doubly list
