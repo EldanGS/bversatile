@@ -1,5 +1,5 @@
 from test_framework import generic_test
-
+from functools import reduce
 
 def look_and_say(n):
     def next_number(s):

@@ -4,7 +4,7 @@ from test_framework import generic_test
 def reverse_bits(x):
     result = 0
     for _ in range(64):
-        result = (result << 1) + (x & 1)
+        result = (result << 1) | (x & 1)
         x >>= 1
 
     return result

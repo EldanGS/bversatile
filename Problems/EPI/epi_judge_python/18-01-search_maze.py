@@ -33,7 +33,7 @@ def search_maze(maze, s, e):
                                     (curr.y, curr.y, curr.y + 1, curr.y - 1)))):
             return True
 
-        del path[-1]
+        path.pop()
         return False
 
     search_path(s)

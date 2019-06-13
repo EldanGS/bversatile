@@ -9,10 +9,10 @@ def k_largest_in_binary_heap2(A, k):
     max_heap = []
     for a in A:
         if len(max_heap) < k:
-            heapq.heappush(max_heap, a)
+            heappush(max_heap, a)
         else:
             if max_heap[0] < a:
-                heapq.heappushpop(max_heap, a)
+                heappushpop(max_heap, a)
 
     return max_heap
 

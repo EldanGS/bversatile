@@ -19,6 +19,7 @@ def matrix_in_spiral_order(square_matrix):
             next_x, next_y = x + SHIFT[direction][0], y + SHIFT[direction][1]
 
         x, y = next_x, next_y
+
     return spiral_order
 
 

@@ -13,14 +13,14 @@ class BinaryTreeNode:
 
 
 def construct_right_sibling(tree) -> None:
-    def populate_children_next(node):
+    def population_children_next_field(node):
         while node and node.left:
             node.left.next = node.right
             node.right.next = node.next and node.next.left
             node = node.next
 
-    while tree:
-        populate_children_next(tree)
+    while tree and tree.left:
+        population_children_next_field(tree)
         tree = tree.left
 
 

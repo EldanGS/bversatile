@@ -6,8 +6,8 @@ def get_max_trapped_water(heights):
     max_trapped_water = 0
 
     while left < right:
-        weight = right - left
-        max_trapped_water = max(max_trapped_water, min(heights[left], heights[right]) * weight)
+        width = right - left
+        max_trapped_water = max(max_trapped_water, min(heights[left], heights[right]) * width)
 
         if heights[left] > heights[right]:
             right -= 1
