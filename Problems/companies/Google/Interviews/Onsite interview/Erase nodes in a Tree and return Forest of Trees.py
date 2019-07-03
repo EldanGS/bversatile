@@ -40,7 +40,7 @@ def erase_nodes(root, erased):
     erase_nodes_helper(root, erased, result)
 
     if root not in erased:
-        result.append(root.val)
+        result.append(root)
 
     return result
 
@@ -63,3 +63,22 @@ def erase_nodes_helper(node, erased, result):
     return node
 
 
+if __name__ == '__main__':
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.left = Node(4)
+    root.right.right = Node(5)
+    root.left.right = Node(6)
+
+    erased = {2, 5}
+
+    result = erase_nodes(root, erased)
+    for node in result:
+        print(node.val)
+    """
+            1
+        [2]      3
+     4      6       [5]
+        
+    """
