@@ -2,7 +2,8 @@
 https://leetcode.com/discuss/interview-question/285350/Google-interview-question-Erase-nodes-in-a-Tree-and-return-Forest-of-Trees
 
 
-You are given a binary tree and a function shouldBeErased(node to check whether a node should be erased). Erase all nodes that should be erased in the binary tree and return the resulting forest in the form of an array of every root node.
+You are given a binary tree and a function shouldBeErased(node to check whether a node should be erased).
+Erase all nodes that should be erased in the binary tree and return the resulting forest in the form of an array of every root node.
 
 	               A
 				/      \

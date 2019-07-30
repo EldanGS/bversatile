@@ -1,7 +1,8 @@
 """
 https://leetcode.com/discuss/interview-question/321507/Google-or-Onsite-interview-or-Power-supply
 
-I interviewed at Google for L3 few months back. I was asked this question that i couldn't figure out. Let me know if anyone can figure out solution.
+I interviewed at Google for L3 few months back. I was asked this question that i couldn't figure out.
+Let me know if anyone can figure out solution.
 
 There are N cites (1,2,3,.....,N). For each city i, you can either create a power house or connect it through a wire to other city that has power.
 You're given a cost array (Pi) of building a power house at i'th city, and cost matrix Ci-j of connecting wire to other cities.
@@ -10,7 +11,8 @@ You've to find minimum cost, such that each city will have power supply.
 
 https://leetcode.com/discuss/interview-question/265623/Google-or-Phone-screen-or-Water-supply
 Question 2:
-Let's say you're an environmental engineer trying to assist in laying out infrastructure in some village. The village has N houses, each which needs a water supply. A house can receive water if:
+Let's say you're an environmental engineer trying to assist in laying out infrastructure in some village.
+The village has N houses, each which needs a water supply. A house can receive water if:
 
 A well is built there
 There is some path of pipes to a house with a water well
@@ -21,6 +23,7 @@ The cost of the pipe to connect house[i] and house[j] (pipe_cost[i][j])
 What's the cheapest way to make sure every house in the village is connected to a water supply?
 
 """
+
 
 class DSU:
     def __init__(self, N):
