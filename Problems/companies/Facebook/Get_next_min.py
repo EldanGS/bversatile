@@ -1,3 +1,5 @@
+# https://leetcode.com/discuss/interview-question/124849/Facebook%3A-getNextMinimum-every-single-call
+
 """
 You have three unsorted list of numbers.
 list1 = {5,1,2,4}

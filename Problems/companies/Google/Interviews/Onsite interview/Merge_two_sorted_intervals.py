@@ -22,6 +22,9 @@ class Solution:
         start, end = list1[0].start, list1[0].end
         if start > list2[0].start:
             start, end = list2[0].start, list2[0].end
+            j += 1
+        else:
+            i += 1
 
         while i < n and j < m:
             if i < n and end > list1[i].start:
