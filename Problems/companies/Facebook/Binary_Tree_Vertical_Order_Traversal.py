@@ -72,7 +72,7 @@ class TreeNode:
         self.right = None
 
 
-def verticalTraversal(root: TreeNode):
+def vertical_traversal(root: TreeNode):
     populate = collections.defaultdict(list)
 
     def dfs(node=root, state=0, depth=0):
@@ -93,7 +93,7 @@ def verticalTraversal(root: TreeNode):
     return result
 
 
-def verticalTraversal2(root: TreeNode):
+def vertical_traversal2(root: TreeNode):
     g = collections.defaultdict(list)
     queue = [(root, 0)]
 
@@ -113,3 +113,44 @@ def verticalTraversal2(root: TreeNode):
         queue = new
 
     return [g[i] for i in sorted(g)]
+
+
+def vertical_traversal_sum(root: TreeNode):
+    vertical_order = collections.defaultdict(int)
+    queue = [(root, 0)]
+
+    while queue:
+        new_queue = []
+
+        for node, state in queue:
+            vertical_order[state] += node.val
+
+            if node.left:
+                new_queue.append((node.left, state - 1))
+            if node.right:
+                new_queue.append((node.right, state + 1))
+
+        queue = new_queue
+
+    return [vertical_order[state] for state in sorted(vertical_order)]
+
+
+if __name__ == '__main__':
+    n1 = TreeNode(4)
+    n2 = TreeNode(2)
+    n3 = TreeNode(1)
+    n4 = TreeNode(3)
+    n5 = TreeNode(6)
+    n6 = TreeNode(5)
+    n7 = TreeNode(7)
+
+    n1.left = n2
+    n2.left = n3
+    n2.right = n4
+
+    n1.right = n5
+    n5.left = n6
+    n5.right = n7
+
+    vertical_tree = vertical_traversal_sum(n1)
+    print(vertical_tree)

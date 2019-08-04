@@ -112,6 +112,7 @@ Explanation: l4 is a part of the tree but it's missing in the input list so retu
 NOTE: Node values only used for demonstration purposes.
 
 """
+from collections import defaultdict
 
 
 class TreeNode:
@@ -121,35 +122,49 @@ class TreeNode:
         self.right = right
 
 
-def valid_tree_helper(node, visited):
-    if not node:
-        return True
+def valid_btree(u, graph, visited):
+    if u in visited:
+        return False
 
-    if node.left:
-        if visited[node.left]:
-            return False
-        visited[node.left] = True
+    visited.add(u)
 
-    if node.right:
-        if visited[node.right]:
-            return False
-        visited[node.right] = True
+    for v in graph[u]:
+        if v not in visited:
+            valid_btree(v, graph, visited)
 
-    return valid_tree_helper(node.left, visited) and valid_tree_helper(node.right, visited)
+    return True
 
 
 def is_binary_tree(nodes):
     if not nodes:
         return True
 
-    visited = {node: False for node in nodes}
+    graph = defaultdict(list)
+    indegree, outdegree = defaultdict(int), defaultdict(int)
     for node in nodes:
-        if not visited[node] and not valid_tree_helper(node, visited):
+        outdegree[node] += 1
+        indegree.setdefault(node, 0)
+
+        if node.left:
+            graph[node].append(node.left)
+            indegree[node.left] += 1
+
+        if node.right:
+            graph[node].append(node.right)
+            indegree[node.right] += 1
+
+    if (any(degree > 1 for degree in indegree.values()) or
+            any(degree > 2 for degree in outdegree.values())):
+        return False
+
+    visited = set()
+    for node in nodes:
+        if not valid_btree(node, graph, visited):
             return False
 
     root = 0
-    for node in nodes:
-        if not visited[node]:
+    for degree in indegree.values():
+        if not degree:
             root += 1
 
     return root == 1
