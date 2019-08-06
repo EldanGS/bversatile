@@ -22,20 +22,34 @@ Return null if there is no path between S and E.
 import collections
 
 
-def bfs(start_x, start_y, end_x, end_y, parent, matrix):
-    queue = collections.deque((start_x, start_y))
+def bfs(start_x, start_y, end_x, end_y, n, m, matrix, visited, parent_map):
+    queue = collections.deque([(start_x, start_y)])
 
     while queue:
         x, y = queue.popleft()
+        visited[x][y] = True
 
         if x == end_x and y == end_y:
-            break
+            return
 
         for next_x, next_y in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
-            if (0 <= next_x < len(matrix) and 0 <= next_y < len(matrix[0])
-                    and matrix[next_x][next_y] == '1' and parent[next_x][next_y] == float('INF')):
+            if (0 <= next_x < n and 0 <= next_y < m
+                    and matrix[next_x][next_y] != 'X' and not visited[next_x][next_y]):
                 queue.append((next_x, next_y))
-                parent[next_x][next_y] = parent[x][y] + 1
+                parent_map[next_x + next_y * m] = x + y * m
+
+
+def get_path(start_x, start_y, end_x, end_y, n, m, parent_map, path):
+    start = start_x + start_y * m
+    parent = parent_map.get(end_x + end_y * m, None)
+
+    print(parent, start)
+
+    while parent and start != parent:
+        path.append((parent % m, parent // n))
+        parent = parent_map.get(parent, None)
+
+    return path
 
 
 def short_path(matrix):
@@ -53,15 +67,23 @@ def short_path(matrix):
             elif matrix[i][j] == 'E':
                 end_x, end_y = i, j
 
+    path = []
     if start_x != -1 and end_x != -1:
-        parent = [[float('inf')] * m for _ in range(n)]
-        parent[start_x][start_y] = 0
-        bfs(start_x, start_y, end_x, end_y, parent, matrix)
+        visited = [[False] * m for _ in range(n)]
+        parent_map = {}
+        bfs(start_x, start_y, end_x, end_y, n, m, matrix, visited, parent_map)
 
-        path = []
-        while parent[end_x][end_y] != 0:
-            path.append((end_x, end_y))
+        path = get_path(start_x, start_y, end_x, end_y, n, m, parent_map, [(end_x, end_y)])
+        path.append((start_x, start_y))
 
-            
+    return path[::-1]
 
-    return []
+
+if __name__ == '__main__':
+    matrix = [['1', '1', 'X', '1', '1'],
+              ['S', '1', 'X', '1', '1'],
+              ['1', '1', '1', '1', '1'],
+              ['X', '1', '1', 'E', '1'],
+              ['1', '1', '1', '1', 'X']]
+
+    print(short_path(matrix))
