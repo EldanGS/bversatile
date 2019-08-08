@@ -30,32 +30,25 @@ def time_intersection(A, B):
 
     timelines = []
     for start, end in A:
-        timelines.append((start, 1))
-        timelines.append((end, -1))
+        timelines.append((start, 0))
+        timelines.append((end, 1))
 
     for start, end in B:
-        timelines.append((start, 1))
-        timelines.append((end, - 1))
+        timelines.append((start, 0))
+        timelines.append((end, 1))
 
     timelines.sort()
 
-    result = []
-    start, end = -1, -1
-    count, max_count = 0, 0
+    result, count = [], 0
 
-    for time, delta in timelines:
-        count += delta
+    for i, (time, delta) in enumerate(timelines):
+        if not delta:
+            count += 1
+        else:
+            count -= 1
 
-        if count == 2 and max_count < 2:
-            start = time
-            max_count = 2
-        elif count < 2 and max_count == 2:
-            end = time
-            max_count = count
-
-        if start != -1 and end != -1:
-            result.append((start, end))
-            start = end = -1
+        if count == 2:
+            result.append((time, timelines[i + 1][0]))
 
     return result
 
