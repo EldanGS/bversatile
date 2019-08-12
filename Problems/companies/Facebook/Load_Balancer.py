@@ -1,13 +1,13 @@
+# https://www.lintcode.com/problem/load-balancer/description
+
 """
 Description
-
 Implement a load balancer for web servers. It provide the following functionality:
 
 Add a new server to the cluster => add(server_id).
 Remove a bad server from the cluster => remove(server_id).
 Pick a server in the cluster randomly with equal probability => pick().
 At beginning, the cluster is empty. When pick() is called you need to randomly return a server_id in the cluster.
-
 """
 
 import random
@@ -47,7 +47,7 @@ class LoadBalancer:
         self.server[self.entity[-1]] = index
 
         self.server.pop(server_id)
-        del self.entity[index]
+        del self.entity[-1]
 
     """
     @return: pick a server in the cluster randomly with equal probability
@@ -56,5 +56,5 @@ class LoadBalancer:
     def pick(self):
         # write your code here
         n = len(self.entity)
-        index = random.randrange(0, n)
+        index = random.randint(0, n - 1)
         return self.entity[index]

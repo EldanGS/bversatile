@@ -22,7 +22,7 @@ Output:  [1,2,4,7,5,3,6,8,9]
 
 
 class Solution:
-    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+    def findDiagonalOrder(self, matrix) -> list:
         if not matrix or not matrix[0]:
             return []
 
