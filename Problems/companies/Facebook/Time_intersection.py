@@ -42,7 +42,7 @@ def time_intersection(A, B):
     result, count = [], 0
 
     for i, (time, delta) in enumerate(timelines):
-        if not delta:
+        if delta == 0:
             count += 1
         else:
             count -= 1

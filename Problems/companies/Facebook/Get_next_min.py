@@ -15,7 +15,6 @@ Don't even think about brute force solution.
 import heapq
 import collections
 
-
 ValueAndIndex = collections.namedtuple('ValueAndIndex', ('value', 'index', 'list_num'))
 
 
@@ -59,7 +58,7 @@ class GetNextMin:
 
 
 if __name__ == '__main__':
-    l1, l2, l3 = [5,1,2,4], [4,6,3], [9,0,7]
+    l1, l2, l3 = [5, 1, 2, 4], [4, 6, 3], [9, 0, 7]
     solution = GetNextMin(l1, l2, l3)
 
     for _ in range(10):

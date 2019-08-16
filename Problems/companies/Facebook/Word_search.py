@@ -15,7 +15,6 @@ Given an array of words define a function that takes in a string and returns a b
 “fishy” -> false
 
 """
-import string
 
 
 class TrieNode:

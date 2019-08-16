@@ -94,25 +94,25 @@ def vertical_traversal(root: TreeNode):
 
 
 def vertical_traversal2(root: TreeNode):
-    g = collections.defaultdict(list)
+    if not root:
+        return []
+
+    degree_map = collections.defaultdict(list)
     queue = [(root, 0)]
 
     while queue:
-        new = []
-        d = collections.defaultdict(list)
+        new_queue = []
+        for node, degree in queue:
+            degree_map[degree].append(node.val)
 
-        for node, s in queue:
-            d[s].append(node.val)
             if node.left:
-                new += [(node.left, s - 1)]
+                new_queue.append((node.left, degree - 1))
             if node.right:
-                new += [(node.right, s + 1)]
+                new_queue.append((node.right, degree + 1))
 
-        for k in d:
-            g[k].extend(sorted(d[k]))
-        queue = new
+        queue = new_queue
 
-    return [g[i] for i in sorted(g)]
+    return [degree_map[state] for state in sorted(degree_map)]
 
 
 def vertical_traversal_sum(root: TreeNode):
