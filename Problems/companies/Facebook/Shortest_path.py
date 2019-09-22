@@ -24,10 +24,10 @@ import collections
 
 def bfs(start_x, start_y, end_x, end_y, n, m, matrix, visited, parent_map):
     queue = collections.deque([(start_x, start_y)])
+    visited[start_x][start_y] = True
 
     while queue:
         x, y = queue.popleft()
-        visited[x][y] = True
 
         if x == end_x and y == end_y:
             return
@@ -36,6 +36,7 @@ def bfs(start_x, start_y, end_x, end_y, n, m, matrix, visited, parent_map):
             if (0 <= next_x < n and 0 <= next_y < m
                     and matrix[next_x][next_y] != 'X' and not visited[next_x][next_y]):
                 queue.append((next_x, next_y))
+                visited[next_x][next_y] = True
                 parent_map[next_x + next_y * m] = x + y * m
 
 

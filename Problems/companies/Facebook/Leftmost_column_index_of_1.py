@@ -23,21 +23,23 @@ Expected solution better than O(r * c).
 """
 
 
-def leftmost_index(grid):
+def leftmost_index(grid) -> int:
     if not grid or not grid[0]:
         return -1
 
     i, j = 0, len(grid[0]) - 1
-    result = -1
+    candidate = -1
 
     while i < len(grid) and j >= 0:
+        if j == 0:
+            break
+
         if grid[i][j]:
-            result = j
-            j -= 1
+            candidate, j = j, j - 1
         else:
             i += 1
 
-    return result
+    return candidate
 
 
 def _test(grid, expected):
@@ -52,4 +54,7 @@ if __name__ == '__main__':
     _test(grid, 1)
 
     grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    _test(grid, -1)
+
+    grid = [[]]
     _test(grid, -1)
