@@ -43,6 +43,24 @@ records without a value for the key should be treated as having value 0. Once
 you have a working solution, you should re-implement min_by_key in terms of
 first_by_key .
 
+
+* * # Step 3: first_by_key comparator As we build increasingly rich orderings
+for our records, we'll find it useful to extract the comparison of records into
+a comparator. This is a function or object (depending on your language) which
+determines if a record is "less than", equal, or "greater than" another.
+In object-oriented languages, you should write a class whose constructor accepts
+two parameters: a string key and a string direction. The class should implement
+a method compare that takes as its parameters two records. This method should
+return -1 if the first record comes before the second record (according to key
+and direction), zero if neither record comes before the other, or 1 if the first
+record comes after the second. In functional languages, you should write a
+function which accepts two parameters: a string key and a string direction. The
+function should return a method that takes as its parameters two records. This
+function should return -1 if the first record comes before the second record
+(according to key and direction), zero if neither record comes before the other,
+or 1 if the first record comes after the second. You should then use your
+comparator in your implementation of first_by_key.
+
 """
 
 
@@ -73,7 +91,7 @@ class DataBase:
                     result = row
         return result
 
-    def min_by_order(self, order, min_value, current_value):
+    def min_by_order(self, order: str, min_value: int, current_value: int):
         if order == 'desc':
             return min_value >= current_value
         else:
@@ -108,6 +126,46 @@ class TestDataBase:
             assert actual == expected, 'Unexpected result'
 
 
+class RecordComparator:
+    def __init__(self, key, order):
+        self._key = key
+        self._order = 1 if order == 'asc' else -1
+
+    def object_has_key(self, obj, key):
+        return key in obj
+
+    def compare(self, obj1, obj2):
+        if not self.object_has_key(obj1, self._key):
+            raise ValueError('Unexpected key')
+        if not self.object_has_key(obj2, self._key):
+            raise ValueError('Unexpected key')
+
+        val1 = self._order * obj1[self._key]
+        val2 = self._order * obj2[self._key]
+
+        if val1 == val2:
+            return 0
+        else:
+            return 1 if val1 > val2 else -1
+
+
+class TestRecordComparator:
+    def test_compare(self):
+        test_cases = [('a', 'asc', {"a": 1}, {"a": 2}, -1),
+                      ('a', 'asc', {"a": 2}, {"a": 1}, 1),
+                      ('a', 'asc', {"a": 1}, {"a": 1}, 0),
+                      ('b', 'desc', {"b": 1}, {"b": 2}, 1),
+                      ('b', 'desc', {"b": 2}, {"b": 1}, -1),
+                      ('b', 'desc', {"b": 1}, {"b": 1}, 0)]
+
+        for key, order, obj1, obj2, expected in test_cases:
+            actual = RecordComparator(key, order).compare(obj1, obj2)
+            assert actual == expected, 'Wrong answer'
+
+
 if __name__ == '__main__':
-    test = TestDataBase()
-    test.test_data_to_min_by_key()
+    test_database = TestDataBase()
+    test_database.test_data_to_min_by_key()
+
+    test_record_comparator = TestRecordComparator()
+    test_record_comparator.test_compare()
