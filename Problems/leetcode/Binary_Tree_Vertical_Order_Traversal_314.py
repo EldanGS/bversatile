@@ -82,7 +82,7 @@ class TreeNode:
 
 
 class Solution:
-    def verticalOrder(self, root: TreeNode) -> List[List[int]]:
+    def qverticalOrder(self, root: TreeNode) -> List[List[int]]:
         data = collections.defaultdict(list)
         queue = [(root, 0)]
 
