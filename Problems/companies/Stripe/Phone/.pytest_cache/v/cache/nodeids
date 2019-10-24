@@ -1,0 +1,5 @@
+[
+  "toy_database.py::TestDataBase::()::test_data_to_min_by_key",
+  "toy_database.py::TestDataBase::()::test_data_to_fist_by_key",
+  "toy_database.py::TestRecordComparator::()::test_compare"
+]
