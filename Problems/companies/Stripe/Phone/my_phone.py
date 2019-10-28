@@ -80,10 +80,7 @@ class DataBase:
 
         result, min_value = table[0], float('inf')
         for row in table:
-            if self.row_consist(row, target):
-                row_value = row[target]
-            else:
-                row_value = 0
+            row_value = row.get(target, 0)
 
             if min_value > row_value:
                 result = row
