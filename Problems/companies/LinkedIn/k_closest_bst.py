@@ -34,7 +34,7 @@ class TreeNode:
 
 # O(NlogK)
 class Solution:
-    def closestKValues(self, root: TreeNode, target: float, k: int) -> list
+    def closestKValues(self, root: TreeNode, target: float, k: int) -> list:
         queue = collections.deque([root])
         closest_k = []
 
