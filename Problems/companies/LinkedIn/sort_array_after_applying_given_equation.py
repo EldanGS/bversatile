@@ -19,11 +19,12 @@ def func(x, a, b, c):
     return a * x ** 2 + b * x + c
 
 
-# O(NlogN) time
+# O(NlogN) time, O(N) space
 def sort_array_with_apply_func(nums: list, a: float, b: float, c: float):
     return sorted([func(x, a, b, c) for x in nums])
 
 
+# O(N) time, O(N) space
 def sort_array_with_apply_func2(nums: list, a: float, b: float, c: float):
     nums = [func(x, a, b, c) for x in nums]
     index, max_val = -1, float('-inf')
