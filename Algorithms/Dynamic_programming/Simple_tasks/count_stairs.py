@@ -1,4 +1,5 @@
-"""One curious child has a set of N little bricks (5 ≤ N ≤ 500). From these
+"""
+One curious child has a set of N little bricks (5 ≤ N ≤ 500). From these
 bricks he builds different staircases. Staircase consists of steps of
 different sizes in a strictly descending order. It is not allowed for
 staircase to have steps equal sizes. Every staircase consists of at least two
@@ -17,7 +18,7 @@ Output: Number Q
 def count_staircases(N):
     dp = [1] + [0] * N
     for i in range(1, N + 1):
-        for j in range(N, i, -1):
+        for j in range(N, i - 1, -1):
             dp[j] += dp[j - i]
     return dp[-1]
 
