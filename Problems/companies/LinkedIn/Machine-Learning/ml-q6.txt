@@ -1,0 +1,3 @@
+What is batch normalization?
+What is the loss function for an SVM?
+Why use SVM over neural nets?

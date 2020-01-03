@@ -1,4 +1,6 @@
 """
+https://www.geeksforgeeks.org/sort-array-applying-given-equation/
+
 We have an integer array that is sorted in ascending order. We also have 3 integers A, B and C.
 We need to apply A*x*x + B*x + C for each element x in the array and sort the modified array.
 

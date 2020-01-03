@@ -1,0 +1,2 @@
+1. Clustering Algorithms, EM, Bayesian statistics
+2. Describe the bayesian classifier
