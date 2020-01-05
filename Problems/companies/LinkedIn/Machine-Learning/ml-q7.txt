@@ -1,8 +1,0 @@
-Given a sorted list of numbers and a function f: x -> ax^2 + bx + c,
-apply f to all elements and return a sorted list of the f(xi)'s
-
-Explain some ML concepts:
-- Overfitting / Underfitting
-- Regularization
-- Bagging / Boosting
-- Performance metrics

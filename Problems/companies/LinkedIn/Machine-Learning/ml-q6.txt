@@ -1,3 +1,6 @@
 What is batch normalization?
 What is the loss function for an SVM?
 Why use SVM over neural nets?
+
+https://towardsdatascience.com/road-to-svm-maximal-margin-classifier-and-support-vector-classifier-85cb1e3dcc0a
+https://machinelearningmastery.com/support-vector-machines-for-machine-learning/

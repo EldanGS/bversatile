@@ -1,2 +1,5 @@
 1. Clustering Algorithms, EM, Bayesian statistics
 2. Describe the bayesian classifier
+
+https://towardsdatascience.com/the-naive-bayes-classifier-e92ea9f47523
+https://towardsdatascience.com/the-naive-bayes-classifier-caaf5b01635e
