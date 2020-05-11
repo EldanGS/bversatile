@@ -43,25 +43,21 @@ def min_diff_partition_rec_with_memo(nums):
 
 def min_diff_partition(nums):
     total = sum(nums)
-    target = (total // 2) + 1
+    target = (total // 2)
+    dp = [[True] + [False] * target for _ in nums]
 
-    dp = [[False] * target for _ in nums]
-
-    for i in range(len(nums)):
-        dp[i][0] = True
-
-    for i in range(target):
+    for i in range(target + 1):
         dp[0][i] = nums[0] == i
 
     for i in range(1, len(nums)):
-        for val in range(1, target):
+        for val in range(1, target + 1):
             if dp[i - 1][val]:
                 dp[i][val] = dp[i - 1][val]
-            if val >= nums[i]:
+            elif val >= nums[i]:
                 dp[i][val] = dp[i - 1][val - nums[i]]
 
     sum1 = 0
-    for val in range(target - 1, -1, -1):
+    for val in range(target, -1, -1):
         if dp[-1][val]:
             sum1 = val
             break
