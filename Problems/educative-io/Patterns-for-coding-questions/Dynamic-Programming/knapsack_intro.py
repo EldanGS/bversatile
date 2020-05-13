@@ -269,10 +269,10 @@ def solve_knapsack_1d_array(profits, weights, capacity):
     if capacity <= 0 or n == 0 or len(weights) != n:
         return 0
 
-    dp = [0 for x in range(capacity + 1)]
+    dp = [0 for _ in range(capacity + 1)]
 
     # if we have only one weight, we will take it if it is not more than the capacity
-    for c in range(0, capacity + 1):
+    for c in range(capacity + 1):
         if weights[0] <= c:
             dp[c] = profits[0]
 
